@@ -1,0 +1,95 @@
+/**
+ * Theme Name: Ink
+ * Theme URI: https://codestag.com/themes/ink
+ * Author: Codestag
+ * Author URI: https://codestag.com
+ * Description: A Modern and Elegant Photography theme for WordPress.
+ * Version: 1.2.1
+ * License: GNU General Public License v2.0
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Tags: theme-options, fluid-layout, editor-style, featured-images, translation-ready
+ * Text Domain: stag
+ */
+
+@import "compass";
+
+@import "contents";
+@import "reset";
+@import "preboot";
+@import "grid";
+@import "scaffolding";
+@import "elements";
+@import "patterns";
+@import "posts";
+@import "pages";
+@import "sidebar";
+@import "comments";
+@import "forms";
+@import "support";
+
+// Small fix for side menu under IE9
+.site-nav-drawer-open.ie9 {
+	.site-nav,
+	.site-nav--scrollable-container {
+		z-index: 10000;
+	}
+}
+
+.animate {
+	will-change: transform;
+	-webkit-animation: bounceIn 100ms;
+	-moz-animation: bounceIn 100ms;
+	animation: bounceIn 100ms;
+}
+
+@-webkit-keyframes bounceIn {
+	from {
+		-webkit-transform: scale(.85);
+	}
+
+	to {
+		-webkit-transform: scale(1);
+	}
+}
+@-moz-keyframes bounceIn {
+	from {
+		-moz-transform: scale(.85);
+	}
+
+	to {
+		-moz-transform: scale(1);
+	}
+}
+@keyframes bounceIn {
+	from {
+		transform: scale(.85);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+#infinite-handle {
+	overflow: hidden;
+	a {
+		transition: none;
+	}
+	&.loading {
+		border: none;
+		a {
+			color: transparent;
+		}
+		&:hover {
+			background: none;
+		}
+		text-indent: -9999px;
+	}
+}
+
+
+#disqus_thread {
+	max-width: 1010px;
+	margin: 30px auto 10px auto;
+	padding: 0 20px;
+}

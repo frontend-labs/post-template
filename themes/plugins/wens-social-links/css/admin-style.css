@@ -1,0 +1,168 @@
+.clearfix{
+clear: both;
+margin: 0;
+padding: 0;
+}
+.wrap{
+width:98%;
+}
+
+.options_wrap{
+	width:75%;
+	float:left;
+	line-height:1.5em;
+	height:auto;
+	
+}
+
+.options_wrap h2{
+font-style:normal;
+font-size:28px;
+margin-bottom:10px;
+
+}
+
+.top-notice{
+margin: 0 0 15px 5px;
+}
+
+.options_wrap .options_wrap_left {
+float: left;
+width: 50%;
+background-color: #EFEFEF;
+border: 1px solid #CFCFCF;
+margin-right: 10px;
+}
+.options_wrap .options_wrap_right {
+float: left;
+width: 45%;
+background-color: #EFEFEF;
+border: 1px solid #CFCFCF;
+}
+
+.options_wrap .options_wrap_full {
+float: left;
+width: 94%;
+background-color: #EFEFEF;
+border: 1px solid #CFCFCF;
+margin: 10px 0;
+padding: 10px;
+}
+
+
+.options_input {
+	margin:5px;
+	padding:10px;
+	clear:both;
+	overflow:hidden;
+}
+
+
+
+.labels{
+	font-size:12px;
+	display:block;
+	margin:5px;
+	font-weight:bold;
+	color:#555;
+	float: left;
+	width: 80px;
+}
+
+label{
+	font-size:12px;
+	margin-bottom:5px;
+	font-weight:bold;
+	color:#555;
+}
+
+.options_input input[type="text"], .options_input select{
+	width:75%;
+	height:auto;
+	font-size:12px;
+	padding:5px;
+	color:#666;
+	background:#FFF;
+	border-color:#DFDFDF;
+}
+.options_wrap .options_wrap_right .options_input input[type="text"], .options_input select{
+	width:70%;	
+}
+#multicheck select{
+height:auto;
+}
+.options_input input:focus, .options_input textarea:focus{
+		background:#fff;
+}
+.options_input textarea{
+	width:75%;
+	height:135px;
+	padding:5px;
+	color:#666;
+	background:#FFF;
+	border-color:#DFDFDF;
+}
+
+ span.submit{
+	float:left;
+	margin:0 30px 30px 0;
+	padding:0;
+	width:15%;
+}
+
+ .section_wrap span.submit{
+	float:left;
+	margin:0 20px 30px 30px;
+	padding:0;
+	width:15%;
+}
+
+.sidebox {
+	font-size:11px;
+	-moz-border-radius:6px 6px 6px 6px;
+border:1px solid #ddd;
+	margin-bottom:15px;
+	padding:20px;
+	background:#F2F2F2;
+	color:#4D5253;
+	width:20%;
+	float:right;
+	}
+
+.first-sidebox {	
+	margin-top:85px;
+}
+
+.sidebox h2{
+	font-size:22px;
+	color:#000;
+	margin:0 0 10px 0;
+	padding:0;
+	line-height:1;
+	}
+.sidebox p{
+	font-size:11px;
+}
+.sidebox hr{
+	border:0;
+	border-top:1px solid #DDD;
+	margin:15px 0;
+}
+.sidebox ol li, .sidebox ul li{
+	font-size:11px;
+}
+.notice{
+color:#888;
+font-size:10px;}
+
+.button-right{
+float:right;
+text-align:right;
+width:250px;
+}
+.button-right span{
+font-size:0.9em;
+color:#999;
+text-align:justified;
+display:block;
+}

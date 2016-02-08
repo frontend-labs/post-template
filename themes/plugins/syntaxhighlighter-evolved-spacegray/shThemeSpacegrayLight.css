@@ -1,0 +1,210 @@
+/**
+ * Theme Spacegray Light for Syntax Highlighter
+ * Original Sublime text 3 theme : https://github.com/kkga/spacegray
+ *
+ * @version
+ * 1.0.1 (01 28 2014)
+ *
+ */
+
+.syntaxhighlighter {
+    padding: 5px 0 !important;
+    background-color: #eff1f5 !important;
+}
+
+.syntaxhighlighter .line.alt1 {
+    background-color: #eff1f5 !important;
+}
+
+.syntaxhighlighter .line.alt2 {
+    background-color: #eff1f5 !important;
+}
+
+.syntaxhighlighter .line.highlighted.alt1,
+.syntaxhighlighter .line.highlighted.alt2 {
+    background-color: #e2e4ea !important;
+}
+
+.syntaxhighlighter .line.highlighted.number {
+    color: #9fa6ad !important;
+}
+
+.syntaxhighlighter table caption {
+    color: #858585 !important;
+}
+
+.syntaxhighlighter .gutter {
+    color: #9fa6ad !important;
+}
+
+.syntaxhighlighter .gutter .line {
+    border-right: 1px solid #d8d8d8 !important;
+}
+
+.syntaxhighlighter .gutter .line.highlighted {
+    color: #9fa6ad !important;
+    background-color: #e2e4ea !important;
+}
+
+.syntaxhighlighter.printing .line .content {
+    border: none !important;
+}
+
+.syntaxhighlighter.collapsed {
+    overflow: visible !important;
+}
+
+.syntaxhighlighter.collapsed .toolbar {
+    border: 1px solid #41a83e !important;
+    color: #96dd3b !important;
+    background: black !important;
+}
+
+.syntaxhighlighter.collapsed .toolbar a {
+    color: #96dd3b !important;
+}
+
+.syntaxhighlighter.collapsed .toolbar a:hover {
+    color: white !important;
+}
+
+.syntaxhighlighter .toolbar {
+    border: none !important;
+    color: white !important;
+    background: #41a83e !important;
+}
+
+.syntaxhighlighter .toolbar a {
+    color: white !important;
+}
+
+.syntaxhighlighter .toolbar a:hover {
+    color: #ffe862 !important;
+}
+
+/* Plain Stuff */
+.syntaxhighlighter .plain,
+.syntaxhighlighter .plain a {
+    color: #4e5b66 !important;
+}
+
+.syntaxhighlighter .xml.plain,
+.syntaxhighlighter .xml.plain a {
+    color: #4e5b66 !important;
+}
+
+.syntaxhighlighter .css.plain,
+.syntaxhighlighter .css.plain a {
+    color: #d08770 !important;
+}
+
+.syntaxhighlighter .php.plain,
+.syntaxhighlighter .php.plain a {
+    color: #8fa1b3 !important;
+}
+
+.syntaxhighlighter .jscript.plain,
+.syntaxhighlighter .jscript.plain a {
+    color: #4e5b66 !important;
+}
+
+/* Comments stuff */
+.syntaxhighlighter .comments,
+.syntaxhighlighter .comments a {
+    color: #a7adba !important;
+}
+
+/* Strings stuff */
+.syntaxhighlighter .string,
+.syntaxhighlighter .string a {
+    color: #a3be8c !important;
+}
+
+.syntaxhighlighter .xml.string,
+.syntaxhighlighter .xml.string a {
+    color: #a3be8c !important;
+}
+
+.syntaxhighlighter .xml.string,
+.syntaxhighlighter .xml.string a {
+    color: #a3be8c !important;
+}
+
+/* Keywords stuff */
+.syntaxhighlighter .keyword {
+    color: #bf616a !important;
+}
+
+.syntaxhighlighter .css.keyword,
+.syntaxhighlighter .css.keyword a {
+    color: #4e5b66 !important;
+}
+
+.syntaxhighlighter .xml.keyword,
+.syntaxhighlighter .xml.keyword a {
+    color: #bf616a !important;
+}
+
+.syntaxhighlighter .php.keyword,
+.syntaxhighlighter .php.keyword a {
+    color: #b48ead !important;
+}
+
+.syntaxhighlighter .preprocessor {
+    color: #91bb9e !important;
+}
+
+.syntaxhighlighter .variable {
+    color: #bf616a !important;
+}
+
+.syntaxhighlighter .value {
+    color: #f7e741 !important;
+}
+
+/* Values stuff */
+.syntaxhighlighter .css.value,
+.syntaxhighlighter .css.value a {
+    color: #96b5b4 !important;
+}
+
+.syntaxhighlighter .functions {
+    color: #bf616a !important;
+}
+
+.syntaxhighlighter .bash.functions {
+    color: #7fa1b3 !important;
+}
+
+.syntaxhighlighter .constants {
+    color: #e0e8ff !important;
+}
+
+.syntaxhighlighter .script {
+    font-weight: 600 !important;
+    color: #96dd3b !important;
+    background-color: none !important;
+}
+
+.syntaxhighlighter .color1,
+.syntaxhighlighter .color1 a {
+    color: #d08770 !important;
+}
+
+.syntaxhighlighter .color2,
+.syntaxhighlighter .color2 a {
+    color: #91bb9e !important;
+}
+
+.syntaxhighlighter .color3,
+.syntaxhighlighter .color3 a {
+    color: #b48ead !important;
+}
+
+.syntaxhighlighter .comments {
+    font-style: italic !important;
+}
+
+.syntaxhighlighter .keyword {
+    font-weight: 600 !important;
+}

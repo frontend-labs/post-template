@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stag Custom Sidebars\n"
+"POT-Creation-Date: 2014-06-11 10:04+0530\n"
+"PO-Revision-Date: 2014-06-11 10:04+0530\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext;_n;__ngettext_noop;_n_noop;_x;_nx;"
+"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
+"esc_html_x;_c;_nc()\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../stag-custom-sidebars.php:86
+msgid "Custom Widget Area"
+msgstr ""
+
+#: ../stag-custom-sidebars.php:143
+msgid "Shortcode"
+msgstr ""
+
+#: ../stag-custom-sidebars.php:144
+msgid "Are you sure you want to delete this sidebar?"
+msgstr ""
+
+#: ../stag-custom-sidebars.php:176
+msgid "Enter name of the new widget area here"
+msgstr ""
+
+#: ../stag-custom-sidebars.php:177
+msgid "Add Widget Area"
+msgstr ""

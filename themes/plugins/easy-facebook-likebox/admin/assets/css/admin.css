@@ -1,0 +1,63 @@
+/* This stylesheet is used to style the admin option form of the plugin. */
+
+.widget-half {
+width: 49%;
+float: left;
+margin-bottom: 0px;
+}
+.half_field{
+	width: 48%;
+}
+.widget-half select{
+	width:95%;
+}
+.clearfix {
+clear: both;
+}
+
+.form-table th {
+width: 400px;
+}
+.button_container{
+	float:left;
+	width:49%;
+}
+div#easy-facebook-likebox_popup {
+	float: left;
+	width: 100%;
+}
+.button_container p.submit{
+	margin-bottom: 25px !important;
+}
+
+div#easy-facebook-likebox_popup_advanced{
+	float: left;
+	width: 100%;
+}
+
+#easy-facebook-likebox_popup .inside h3{
+	color:#21759b;
+}
+
+.efbl_donation{
+  display: inline-block;
+  clear: none;
+  float: right;
+}
+.efbl_donation a{
+	font-size: 26px;
+  text-decoration: none;
+  padding: 100px;
+  background: #7cc68d;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  color: #FFF !important;
+  display: block;
+  text-align: center;
+  line-height: 35px;
+}
+.efbl_donation a:hover{
+	  background: #67BD7B;
+}

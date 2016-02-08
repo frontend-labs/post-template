@@ -1,0 +1,224 @@
+// _preboot.scss
+
+
+// Variables
+// --------------------------------------------------
+
+//Vars
+$content-width: 		970px!default;
+$menu-width: 			330px;
+
+//Descriptive colors
+$bg-light:				#fefefe;
+$bg-lightgray:			#f3f4f5;
+$accent:				#18a374;
+$detail-lightgray:		#b1b7ba;
+$detail-black:			#13171a;
+$detail-basegray:		#484b50;
+$detail-washedgray:		#859093;
+
+//Fonts
+$sans: 					'Helvetica Neue', Helvetica, Arial, sans-serif;
+$mono: 					'Andale Mono', AndaleMono, Consolas, Monaco, monospace;
+
+//Baseline
+$base: 					20px;
+
+//Break points
+$one:					600px;
+$two:					800px;
+$grid-breakpoint:		650px;
+
+//Element
+$indent:				1.5em;
+$rule: 					1px solid $bg-lightgray;
+
+//Headings
+$heading-size-1:        30px !default;
+$heading-size-2:        27px !default;
+$heading-size-3:        23px !default;
+$heading-size-4:        20px !default;
+$heading-size-5:        17px !default;
+$heading-size-6:        14px !default;
+
+$baseline-px: 			16px !default;
+$base-line-height: 		24px !default;
+$base-spacing-unit: 	$base-line-height;
+
+// Mixins
+// --------------------------------------------------
+@mixin no-select {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	   	-ms-user-select: none;
+	   		user-select: none;
+}
+
+@mixin for($media) {
+	@if $media == small-screens {
+		@media screen and (min-width: $one) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (min-width: $two) { @content; }
+	}
+}
+
+@mixin rem($property, $px-values, $important: false) {
+	// Convert the baseline into rems
+	$baseline-rem: $baseline-px / 1rem;
+
+	@if $important == true {
+		$important: " !important"; }
+	@else {
+		$important: '';
+	}
+
+	// Print the first line in pixel values
+	#{$property}: unquote($px-values + $important);
+	// If there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == "number" {
+		#{$property}: unquote($px-values / $baseline-rem + $important); }
+	@else {
+		// Create an empty list that we can dump values into
+		$rem-values: unquote("");
+		@each $value in $px-values {
+			// If the value is zero, return 0
+			@if $value == 0 {
+				$rem-values: append($rem-values, $value); }
+			@else {
+				$rem-values: append($rem-values, $value / $baseline-rem); } }
+		// Return the property and its list of converted values
+		#{$property}: unquote($rem-values + $important);
+	}
+}
+
+$default-feature: min-width; // Default @media feature for the breakpoint() mixin
+
+// Usage:
+// @include media(500px){ …css stuff… }, will output - (min-width: 500px)
+// @include media(max-width 500px){ …css stuff… }, will output - (max-width: 500px)
+// @include media(max-width 500px min-width 800px){ …css stuff… }, will output - (max-width: 500px) and (min-width: 800px)
+@mixin media( $query: $feature $value ) {
+	@if length($query) == 1 {
+		@media screen and ($default-feature: nth($query, 1)) {
+			@content;
+		}
+	}
+
+	@else if length($query) == 2 {
+		@media screen and (nth($query, 1): nth($query, 2)) {
+			@content;
+		}
+	}
+
+	@else if length($query) == 4 {
+		@media screen and (nth($query, 1): nth($query, 2)) and (nth($query, 3): nth($query, 4)) {
+			@content;
+		}
+	}
+
+	@else {
+		@warn "Wrong number of arguments for breakpoint(). Read the documentation for more details.";
+	}
+}
+
+// Extends
+// --------------------------------------------------
+%cf {
+	zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin no-select {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	   	-ms-user-select: none;
+	   		user-select: none;
+}
+
+%break-word {
+	word-break: break-word;
+	word-wrap: break-word;
+}
+
+%vertical-align {
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
+}
+
+%inside {
+	max-width: $content-width;
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	@include media(max-width $content-width) {
+		padding: {
+			left: 20px;
+			right: 20px;
+		}
+	}
+}
+
+%site-width {
+	max-width: $content-width;
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	@include media(max-width $content-width) {
+		padding: {
+			left: $base;
+			right: $base;
+		}
+	}
+}
+
+
+// Functions
+// ---------------------------------------------------
+
+
+// Maths helpers.
+// Halve and double numbers, returning rounded integers. E.g.:
+//
+// 	.foo {
+//     padding: halve(3.2px);
+// 	}
+//
+@function quarter($number) {
+    @return round($number / 4);
+}
+
+@function halve($number) {
+    @return round($number / 2);
+}
+
+@function double($number) {
+    @return round($number * 2);
+}
+
+@function strip-units($val) {
+  @return ($val / ($val * 0 + 1));
+}
+
+// Convert pixels to ems
+// eg. for a relational value of 12px write em(12) when the parent is 16px
+// if the parent is another value say 24px write em(12, 24)
+@function em($pxval, $base: 16px) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}

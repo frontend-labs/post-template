@@ -1,0 +1,69 @@
+.stag-metabox-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.stag-metabox-table th {
+  text-align: left;
+  width: 40%;
+  padding: 10px 0;
+  vertical-align: top;
+}
+
+.stag-metabox-table td {
+  padding: 8px 10px;
+}
+
+.stag-metabox-table label {
+  text-shadow: white 0 1px 0;
+}
+
+.stag-metabox-table label span {
+  display: block;
+  font-weight: normal;
+  color: #777;
+  margin: 3px 0 0 0;
+  font-size: .8rem;
+}
+
+.stag-metabox-table input[type="text"], .stag-metabox-table textarea {
+  width: 100%;
+}
+
+.stag-metabox-table .file{
+  width: 86% !important;
+}
+
+.stag-box-file .file {
+  width: 77% !important;
+}
+
+#side-sortables .stag-metabox-table input[type="text"],
+#side-sortables .stag-metabox-table textarea {
+  width: 100%;
+}
+
+.stag-metabox-table tr {
+  border-top: 1px solid #ececec;
+}
+
+.stag-metabox-table label.radio-label {
+  margin-right: 10px;
+}
+
+.stag-metabox-table .wp-color-picker {
+  width: 80px !important;
+}
+
+.stag-gallery-thumbs {
+  margin-top: 20px;
+  clear: left;
+}
+
+.stag-gallery-thumbs li {
+  float: left;
+  margin-right: 10px;
+}
+
+#side-sortables .stag-metabox-table th{ width: 96%; display: block; padding-left: 0; padding-right: 0; }
+#side-sortables .stag-metabox-table td{ width: 96%; display: block; padding: 0; border-bottom: none; }

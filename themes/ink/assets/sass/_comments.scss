@@ -1,0 +1,148 @@
+/*---------------------------------------------------------
+ 8. Comments (_comments.scss)
+-------------------------------------------------------- */
+.comment {
+	list-style: none; //reset
+	@include rem('margin', 50px 0);
+	&:first-of-type {
+		margin-top: 0; //reset
+	}
+
+	.children {
+		@include rem('margin-top', 70px);
+		@include rem('margin-left', 100px);
+		@include media(max-width 480px) {
+			@include rem('margin-left', 50px);
+		}
+	}
+
+	.divider {
+		display: inline-block;
+		padding: 0 10px 0 6px;
+	}
+}
+
+.comments-area {
+	@include rem('margin-bottom', 50px);
+	@include rem('margin-top', 50px);
+}
+
+.comment-author {
+	font-weight: bold;
+	color: #111112;
+	@include rem('font-size', 23px);
+	@include rem('padding-right', 15px);
+}
+
+.comments-title {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#cancel-comment-reply-link {
+	@include rem('font-size', 15px);
+}
+
+.comment-form-actions {
+	@include media($grid-breakpoint) {
+		display: inline-block;
+		float: right;
+		vertical-align: middle;
+	}
+	@include media(max-width $grid-breakpoint - 1) {
+		margin-top: 20px;
+		button {
+			width: 100%;
+		}
+	}
+}
+
+.comment-meta {
+	@include rem('margin-bottom', 20px);
+}
+
+.comment-form-email {
+	margin-left: 2%;
+}
+
+@include media($grid-breakpoint) {
+	.comment-form-email,
+	.comment-form-author {
+		width: 49%;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: -.25em;
+	}
+}
+
+.comment-form {
+	textarea {
+		height: 150px;
+		line-height: 1.6;
+	}
+
+	> p {
+		@include rem('margin-top', $base*2);
+	}
+}
+
+.comment-list {
+	@extend %cf;
+	@include rem('margin-top', $base*2);
+	@include rem('margin-bottom', $base*2);
+}
+
+.comment-metadata {
+	@include media(max-width 480px) {
+		display: block;
+	}
+}
+
+
+.comments-title,
+.comment-reply-title {
+	@include rem('font-size', 30px);
+}
+
+.blog-textarea {
+	resize: none;
+}
+
+.form-submit {
+	input[type="submit"] {
+		width: 100%;
+	}
+}
+
+/*---------------------------------------------------------
+ Pingbacks / trackbacks (_comments.scss)
+-------------------------------------------------------- */
+.pingback,
+.trackback {
+	padding-top: 0; //reset
+	list-style: none; //reset
+}
+/*---------------------------------------------------------
+ Respond form (_comments.scss)
+-------------------------------------------------------- */
+.respond-type {
+	width: 100%;
+}
+.comment-guidelines {
+	display: block;
+	color: $detail-lightgray;
+}
+.respond-body {
+	margin: 0; //reset
+	border-bottom: $rule;
+	@include rem('padding-bottom', $base*2);
+}
+#respond {
+	.form-submit,
+	input[type="submit"] {
+		margin-bottom: 0; //reset
+	}
+	li + & {
+		@include rem('margin-bottom', $base*3);
+	}
+}

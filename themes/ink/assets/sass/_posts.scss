@@ -1,0 +1,410 @@
+/*---------------------------------------------------------
+ 5. Posts (_posts.scss)
+-------------------------------------------------------- */
+
+.post-grid{
+	text-align: center;
+	position: relative;
+	background-color: #000;
+	color: #fff;
+	overflow: hidden;
+	@include transform(translate3d(0,0,0));
+	a {
+		color: #fff;
+	}
+}
+
+.entry-title {
+	@extend %break-word;
+}
+
+.post-content {
+	@extend %vertical-align;
+	padding: {
+		left: 50px;
+		right: 50px;
+	}
+}
+
+.post-excerpt {
+	@include rem('margin-top', 20px);
+	line-height: 1.8;
+	max-height: 195px;
+	overflow: hidden;
+}
+
+.stag-intro-text {
+	@include rem('font-size', 27px);
+	line-height: 1.5;
+	margin-top: 0;
+	@include rem('margin-bottom', 80px);
+}
+
+.textwidget,
+.entry-content,
+.page-content,
+.comment-content {
+	@extend %cf;
+	line-height: 1.8;
+	@include word-break(break-word);
+	@include rem('font-size', 20px);
+	p, ul, dl, table, blockquote {
+		@include rem('margin-bottom', $base*3);
+	}
+
+	h1 { @include rem('margin-bottom', 30px); }
+	h2 { @include rem('margin-bottom', 25px); }
+	h3 { @include rem('margin-bottom', 22px); }
+	h4 { @include rem('margin-bottom', 18px); }
+	h5 { @include rem('margin-bottom', 15px); }
+	h6 { @include rem('margin-bottom', 15px); }
+
+	// p:last-of-type {
+	// 	margin-bottom: 0;
+	// }
+
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	ul, ol {
+		list-style-position: inside;
+		ul, ol {
+			padding-left: 30px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.textwidget {
+	.site-footer & {
+		@include rem('font-size', 16px);
+	}
+
+	p, ul, dl, table {
+		@include rem('margin-bottom', $base*2);
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.comment-content {
+	@include rem('font-size', 16px);
+	p, ul, dl, table {
+		@include rem('margin-bottom', $base*1.5);
+	}
+}
+
+.entry-footer {
+	border-top: 2px solid #333;
+	border-bottom: 2px solid #333;
+	margin: {
+		top: $base;
+		bottom: $base;
+	}
+	overflow: hidden;
+	@include rem('padding', $base 0);
+	.one-of-two {
+		vertical-align: middle;
+	}
+}
+
+.post-share-buttons {
+	@include media($grid-breakpoint) {
+		text-align: right;
+		h5 {
+			display: inline-block;
+			margin-right: 25px;
+		}
+	}
+
+	@include media(max-width $grid-breakpoint - 1 ) {
+		h5 {
+			margin: 20px 0;
+		}
+		.button {
+			display: block;
+			width: 100%;
+			text-align: center;
+			margin-top: 20px;
+		}
+	}
+}
+
+.entry-meta {
+	span{
+		&:first-child::before {
+			display: none;
+		}
+		&::before {
+			content: '\2022';
+			display: inline-block;
+			padding: 0 7px 0 7px;
+			font-size: 20px;
+			position: relative;
+			top: 3px;
+		}
+	}
+}
+
+.site,
+.post {
+	position: relative;
+}
+
+.post-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	@include background-size(cover);
+	@include transform(translate3d(0,0,0));
+}
+
+.article-cover {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	background: #000;
+	color: #fff;
+	-webkit-overflow-scrolling: touch;
+	will-change: height,transform;
+	@include rem('margin-bottom', $base*4);
+	@include transform(translate3d(0,0,0));
+
+	@include media($grid-breakpoint) {
+		height: 500px;
+		min-height: 500px;
+	}
+
+	@include media(max-width $grid-breakpoint) {
+		min-height: 400px;
+	}
+
+	a {
+		color: #fff;
+	}
+
+	&__content {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		top: 50%;
+		left: 0px;
+		right: 0px;
+		padding: {
+			left: $base+10;
+			right: $base+10;
+		}
+		-webkit-overflow-scrolling: touch;
+		@include transform(translateY(-50%));
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 3;
+		height: 100%;
+	}
+
+	&__background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 2;
+		@include background-size(cover);
+		@include transform(translate3d(0,0,0));
+	}
+
+	.entry-title {
+		@include rem('font-size', 75px);
+		line-height: 1.1;
+		@include media( max-width 480px ) {
+			@include rem('font-size', 30px);
+		}
+		@include media(min-width 481px max-width 768px) {
+			@include rem('font-size', 60px);
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		bottom: 30px;
+		right: 30px;
+		z-index: 4;
+		font-size: 30px;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	&__caption {
+		position: absolute;
+		bottom: 35px;
+		color: white;
+		z-index: 4;
+		@include rem(font-size, 15px);
+		opacity: .75;
+		width: 100%;
+		p {
+			padding-left: 30px;
+			max-width: 80%;
+		}
+	}
+}
+
+.background-video {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 3;
+	overflow: hidden;
+	max-width: none;
+	object-fit: cover;
+	left: 0;
+	@include media(max-width $grid-breakpoint) {
+		display: none;
+	}
+}
+
+@include media($grid-breakpoint) {
+	.has-video {
+		.article-cover__caption,
+		.article-cover__background {
+			display: none;
+		}
+	}
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+	.background-video {
+		display: none;
+	}
+
+	.article-cover {
+		&__caption,
+		&__background {
+			display: block !important;
+		}
+	}
+}
+
+.single,
+.page {
+	.entry-meta,
+	.entry-footer,
+	.post-navigation,
+	.comments-area {
+		@extend %site-width;
+	}
+}
+
+.page-content,
+.entry-content {
+	@extend %site-width;
+}
+
+div.wp-caption {
+	@include media(max-width $content-width) {
+		max-width: 100% !important;
+	}
+}
+
+.site-content,
+.screen-content {
+	.site-nav-drawer-open & {
+		overflow: hidden;
+	}
+}
+
+.tiled-gallery {
+	@include rem('margin', 50px 0);
+}
+
+.related-posts {
+	@extend %cf;
+	.post-grid {
+		&:nth-last-child(2),
+		&:nth-last-child(1) {
+			border-bottom: none;
+		}
+	}
+}
+
+.restricted-post {
+	@include rem('padding-bottom', 80px);
+	text-align: center;
+}
+
+.page-links {
+	@include rem('margin-top', $base);
+	@include rem('padding-top', $base);
+	border-top: 2px solid #333;
+
+	@include media(min-width $grid-breakpoint){
+		text-align: right;
+	}
+	@include media(max-width $grid-breakpoint){
+		text-align: center;
+	}
+
+	h5, span {
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 1;
+		margin: auto;
+	}
+
+	h5 {
+		margin-right: 10px;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	span {
+		width: 46px;
+		height: 46px;
+		text-align: center;
+		padding-top: 10px;
+		border: 2px solid #020303;
+		@include transition(all 100ms ease-in-out);
+		&:hover {
+			background-color: #020303;
+			color: white;
+		}
+	}
+
+	> span {
+		background-color: #020303;
+		color: white;
+	}
+}
+
+.entry-meta,
+.entry-categories {
+	a {
+		@include transition(opacity 150ms);
+		&:hover {
+			opacity: .6;
+		}
+	}
+}
+
+.entry-categories {
+	margin-top: 5px;
+}

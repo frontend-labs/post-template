@@ -1,0 +1,49 @@
+.g,
+.grid,
+%grid {
+	margin-left: -3%;
+	max-width: 105%;
+}
+
+%unit,
+.unit {
+	display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    margin-left: 3%;
+    margin-right: -.25em;
+    /* Clearfix */
+    overflow: hidden;
+    *overflow: visible;
+}
+
+%span-grid,.span-grid {
+	width: 97%;
+}
+
+%one-of-two,.one-of-two { width: 47%; }
+
+%one-of-three,.one-of-three { width: 30.36%; }
+%two-of-three,.two-of-three { width: 63.666666666%; }
+
+%one-of-four,.one-of-four { width: 22.05%; }
+%three-of-four,.three-of-four { width: 72%; }
+
+%one-of-five, .one-of-five { width: 17.07%; }
+%two-of-five,.two-of-five { width: 37%; }
+%three-of-five,.three-of-five { width: 57%; }
+%four-of-five,.four-of-five { width: 77%; }
+
+@media screen and (max-width: $grid-breakpoint) {
+	.grid {
+		margin-left: 0;
+		max-width: none;
+	}
+
+	.unit {
+		width: auto;
+		margin-left: 0;
+		display: block;
+	}
+}

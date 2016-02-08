@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy facebook likebox\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/plugins/easy-facebook-likebox\n"
+"POT-Creation-Date: 2014-05-10 11:23:19+00:00\n"
+"PO-Revision-Date: 2014-05-10 10:37-0500\n"
+"Last-Translator: Sajid Javed <sjaved_87@yahoo.com>\n"
+"Language-Team: JWS <info@jwebsol.com >\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ../admin/easy-facebook-likebox-admin.php:174
+#: ../admin/easy-facebook-likebox-admin.php:175
+msgid "Easy Fcebook Likebox PRO"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:189
+msgid "How to use this plugin"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:190
+msgid "Like box pup up settings"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:191
+msgid "Support us by liking our fan page and/or consider some dontaion!"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:241
+msgid "Settings"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:262
+msgid "Thanks for installting/upgrading the Easy Facebook Likebox Plugin! If you like this plugin, please consider some <a href=\"%s\" target=\"_blank\">donation</a> and/or <a href=\"%s\" target=\"_blank\">rating it</a>! \n"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:275
+msgid "I have supported already"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:263
+msgid "Support us by liking our facebook fan page!"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:319
+msgid "Like box pup up advanced settings"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:328
+msgid "Enable PopUp"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:333
+msgid "Activate this setting to display the header."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:340
+msgid "PopUp Delay after page load"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:345
+msgid "Delay in miliseconds. 1000 ms = 1 second."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:353
+msgid "PopUp Width."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:358
+msgid "Width in pixels."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:365
+msgid "PopUp height"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:370
+msgid "Height in pixels."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:377
+msgid "PopUp content"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:382
+msgid "You can generate easy facebook like box shortcode from Widgets > Easy Facebook LikeBox."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:388
+msgid "Show on home only"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:393
+msgid "Display PopUp on home page only."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:399
+msgid "Enable if visitor is logged in"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:404
+msgid "Shows the PopUp if the user is logged in to your site."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:410
+msgid "Enable if visitor is not logged in"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:415
+msgid "Shows the PopUp if the user is not logged in to your site (Above option will be ignored if checked)."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:421
+msgid "Close button act as never show again"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:426
+msgid "PopUp will not appear when visitor will close it once."
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:432
+msgid "Disable on mobile"
+msgstr ""
+
+#: ../admin/easy-facebook-likebox-admin.php:432
+msgid "Do not display on mobile devices"
+msgstr ""
+
+#: ../admin/views/admin.php:19
+msgid "General"
+msgstr ""
+
+#: ../admin/views/admin.php:20
+msgid "Auto PopUp"
+msgstr ""
+
+#: ../admin/views/admin.php:21
+msgid "Support and Updates"
+msgstr ""
+
+#: ../admin/views/instructinos.php:16
+msgid "Custom facebook feed widget or shortcode usage instructions."
+msgstr ""
+
+#: ../admin/views/instructinos.php:18
+msgid "Here are easy steps to use this feature."
+msgstr ""
+
+#: ../admin/views/instructinos.php:20
+msgid "Add the \"Easy Facebook Feed\" widget in sidebar to show the feed into your website sidebar"
+msgstr ""
+
+#: ../admin/views/instructinos.php:21
+msgid "Add \"Easy Facebook Feed\" widget in sidebar and generate shortcode by saving the widgets option to show custom facebook feed in posts, pages or custom posts."
+msgstr ""
+
+#: ../admin/views/instructinos.php:22
+msgid "You can also directly add below shortcode (without quotes) in post/page editor and change default values with your custom one according to your needs and requirments. \"[efb_feed fanpage_url=\"YOUR_FB_FANPAGE_NAME_OR_ID_OR_URL\" post_number=\"20\" post_limit=\"20\" show_logo=\"DISPLAY_LOGO(1/0)\" show_image=\"DISPLAY_IMAGE(1/0)\"]\" "
+msgstr ""
+
+#: ../admin/views/instructinos.php:29
+msgid "Like box widget or shortcode usage instructions."
+msgstr ""
+
+#: ../admin/views/instructinos.php:31
+msgid "Here are easy steps to use this fature."
+msgstr ""
+
+#: ../admin/views/instructinos.php:33
+msgid "Add the \"Easy Facebook Likebox\" widget in sidebar to show the like box in your website sidebar"
+msgstr ""
+
+#: ../admin/views/instructinos.php:34
+msgid "Add widget in sidebar and generate shortcode by saving the widgets option to show likebox somewhere else on your website."
+msgstr ""
+
+#: ../admin/views/instructinos.php:35
+msgid "You can also directly add below shortcode (without quotes) in post/page editor and change default values with your custom one according to your needs and requirments. \"[efb_likebox fanpage_url=\"YOUR_FB_FANPAGE_NAME_OR_ID\" fb_appid=\"\" box_width=\"300\" box_height=\"\" colorscheme=\"light\" show_faces=\"1\" show_header=\"1\" show_stream=\"0\" show_border=\"1\" ]\""
+msgstr ""
+
+#: ../admin/views/instructinos.php:40
+msgid "AutoPopUp usage instructions."
+msgstr ""
+
+#: ../admin/views/instructinos.php:42
+msgid "Here are easy steps to use/configure AutoPopUp this plugin."
+msgstr ""
+
+#: ../admin/views/instructinos.php:44
+msgid "Enable or disable the AutoPopUp"
+msgstr ""
+
+#: ../admin/views/instructinos.php:45
+msgid "Set width and height. Shoule be same as facebook like box."
+msgstr ""
+
+#: ../admin/views/instructinos.php:46
+msgid "Generate shortcode from Appearance > Widgets > Easy Facebook Likebox and add it in \"Enter shortcode of Eeasy facebook like box\" text box below."
+msgstr ""
+
+#: ../admin/views/instructinos.php:52
+msgid "I am constantly working on the betterment and improvement of this plugin so stay tuned."
+msgstr ""
+
+#: ../public/views/feed.php:346
+msgid "Read full story"
+msgstr ""
+
+#: ../public/views/feed.php:347
+msgid "Share"
+msgstr ""
+
+#: ../public/views/feed.php:377
+msgid "like this."
+msgstr ""
+
+#: ../public/views/feed.php:378
+msgid "and "
+msgstr ""
+
+#: ../public/views/feed.php:379
+msgid "other "
+msgstr ""
+
+#: ../public/views/feed.php:380
+msgid "others "
+msgstr ""
+
+#: ../public/views/feed.php:453
+msgid "comment on facebook"
+msgstr ""
+
+#: ../public/views/feed.php:505
+msgid "Error occured while retrieving the facebook feed "
+msgstr ""
+
+#: ../public/includes/core-functions.php:5
+msgid "second"
+msgstr ""
+
+#: ../public/includes/core-functions.php:6
+msgid "seconds"
+msgstr ""
+
+#: ../public/includes/core-functions.php:7
+msgid "minute"
+msgstr ""
+
+#: ../public/includes/core-functions.php:8
+msgid "minutes"
+msgstr ""
+
+#: ../public/includes/core-functions.php:9
+msgid "hour"
+msgstr ""
+
+#: ../public/includes/core-functions.php:10
+msgid "hours"
+msgstr ""
+
+#: ../public/includes/core-functions.php:11
+msgid "day"
+msgstr ""
+
+#: ../public/includes/core-functions.php:12
+msgid "days"
+msgstr ""
+
+#: ../public/includes/core-functions.php:13
+msgid "week"
+msgstr ""
+
+#: ../public/includes/core-functions.php:14
+msgid "weeks"
+msgstr ""
+
+#: ../public/includes/core-functions.php:15
+msgid "month"
+msgstr ""
+
+#: ../public/includes/core-functions.php:16
+msgid "months"
+msgstr ""
+
+#: ../public/includes/core-functions.php:17
+msgid "year"
+msgstr ""
+
+#: ../public/includes/core-functions.php:18
+msgid "years"
+msgstr ""
+
+#: ../public/includes/core-functions.php:19
+msgid "decade"
+msgstr ""
+
+#: ../public/includes/core-functions.php:22
+msgid "ago"
+msgstr ""

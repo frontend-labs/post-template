@@ -1,0 +1,76 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab%3A400%2C700%2C400italic%2C700italic%7CMontserrat%3A700");
+body {
+  font-family: "Roboto Slab", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 93.75%;
+  line-height: 1.55;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #F0AD2C;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+
+h2 {
+  font-size: 27px;
+  font-size: 1.6875rem;
+}
+
+h3 {
+  font-size: 23px;
+  font-size: 1.4375rem;
+}
+
+h4 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 17px;
+  font-size: 1.0625rem;
+}
+
+h6 {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+tt,
+kbd,
+pre,
+code,
+samp {
+  font-family: 'Andale Mono', AndaleMono, Consolas, Monaco, monospace;
+  font-size: 100%;
+  /* 16px */
+}
+
+blockquote p {
+  color: #BDBDBD;
+}
+
+hr {
+  height: 0px;
+  border: 1px solid #333;
+  max-width: 370px;
+  margin: 40px auto;
+  position: relative;
+}

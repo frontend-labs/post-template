@@ -1,0 +1,24 @@
+{
+  "name": "post-template",
+  "version": "1.0.0",
+  "description": "post-template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontend-labs/post-template.git"
+  },
+  "author": "@jansanchez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frontend-labs/post-template/issues"
+  },
+  "homepage": "https://github.com/frontend-labs/post-template#readme",
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "map-stream": "0.0.6",
+    "vinyl-fs": "^2.3.1"
+  }
+}

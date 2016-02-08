@@ -1,0 +1,425 @@
+/*---------------------------------------------------------
+ 6. Pages (_pages.scss)
+-------------------------------------------------------- */
+.page-header {
+	@extend %site-width;
+	text-align: center;
+	&__content {
+		@include rem(padding-top, 80px);
+		@include rem(padding-bottom, 65px);
+		@include media( max-width $grid-breakpoint - 1) {
+			@include rem(padding, 60px 0);
+		}
+	}
+}
+
+.hide-page-title .site-main .entry-header {
+	display: none;
+}
+
+body[class*="page-id"]:not(.page-template-current-php) {
+	.entry-header {
+		@extend %inside;
+		text-align: center;
+		@include rem('margin-bottom', 70px);
+	}
+	.entry-title {
+		line-height: 1.3;
+		@include rem('font-size', 65px);
+		@include media( max-width 480px ) {
+			@include rem('font-size', 30px);
+			line-height: 1;
+		}
+	}
+	.entry-content {
+		text-align: center;
+	}
+}
+
+.site-main .page {
+	@include rem('padding-bottom', 90px);
+	.header-over & {
+
+	}
+
+	.entry-meta {
+		@include rem('margin-top', 30px);
+		text-align: center;
+	}
+}
+
+.header-over[class*="page-id-"]:not(.page-template-current-php) .hentry {
+	@include rem('padding-top', 200px);
+}
+
+.search .page {
+	padding: 0;
+	.entry-meta {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.page-cover {
+	position: relative;
+
+	&__background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 2;
+		@include background-size(cover);
+	}
+	.hentry {
+		position: relative;
+		z-index: 3;
+	}
+}
+
+
+/*---------------------------------------------------------
+ Author Page (_pages.scss)
+-------------------------------------------------------- */
+.current-author {
+	&__name {
+		line-height: 1.1;
+		@include rem(margin-bottom, 30px);
+		@include media($grid-breakpoint) {
+			@include rem(font-size, 65px);
+		}
+	}
+	&__description {
+		line-height: 1.6;
+		@include rem(font-size, 20px);
+		@include media( max-width $grid-breakpoint - 1) {
+			@include rem(font-size, 18px);
+		}
+	}
+	&__social-profiles {
+		list-style: none;
+		@include rem(font-size, 50px);
+		@include rem(margin-top, 50px);
+
+		@include media(max-width 480px) {
+			@include rem(font-size, 30px);
+		}
+
+		li {
+			display: inline-block;
+			@include rem(margin, 0 20px);
+			@include media(max-width 480px) {
+				@include rem(margin, 0 15px);
+			}
+		}
+		a {
+			color: inherit;
+			@include transition(color 200ms);
+			&:hover {
+				color: #a3a3a3;
+			}
+		}
+	}
+}
+
+.byline {
+	.hide-author & {
+		display: none;
+	}
+}
+
+.author {
+	.block-button {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/*---------------------------------------------------------
+ Widgetized Page Template (_pages.scss)
+-------------------------------------------------------- */
+.page-template-widgetized-php {
+	&.header-over {
+		.stag_widget_intro {
+			@include rem('padding-top', 250px);
+		}
+	}
+}
+
+/*---------------------------------------------------------
+ 404 Error Page (_pages.scss)
+-------------------------------------------------------- */
+.error-404 {
+	.page-header {
+		@include rem('margin-bottom', 20px);
+	}
+
+	.page-content {
+		.widget {
+			@include rem('margin-top', 40px);
+		}
+	}
+
+	.search-form {
+		@include rem('margin-top', 49.9px);
+	}
+	.search-field {
+		width: 100%;
+	}
+	.search-submit {
+		display: none;
+	}
+}
+
+
+.archive-header {
+	background: #000;
+	position: absolute;
+	right: 70px;
+	top: 50%;
+	padding: 10px;
+	@include transform(translateY(-50%));
+	line-height: 1;
+	&__title {
+		@include rem('font-size', 20px);
+	}
+
+	@include media(max-width 800px) {
+		display: none;
+	}
+}
+
+.contact-form {
+	@extend %site-width;
+	@include rem('margin-top', 80px);
+	@include rem('margin-bottom', 80px);
+
+	&__title {
+		@include rem('margin-bottom', 80px);
+		text-align: center;
+	}
+
+	.unit {
+		@include rem('margin-bottom', 40px);
+	}
+
+	textarea,
+	input[type="text"],
+	input[type="email"] {
+		width: 100%;
+	}
+
+	.contact-form-button {
+		width: 215px;
+		margin: 0 auto;
+		display: block;
+		@include media(max-width 480px) {
+			width: 100%;
+		}
+	}
+
+	.error {
+		color: #D15858;
+		display: block;
+		margin-top: 5px;
+	}
+}
+
+.no-results {
+	text-align: center;
+	margin-bottom: 50px;
+	.search-field {
+		width: 100%;
+	}
+	.page-header {
+		margin-bottom: 30px;
+	}
+	.search-form {
+		@include rem('margin-top', 30px);
+	}
+}
+
+/*---------------------------------------------------------
+ Restrict Content Pro styles (_pages.scss)
+-------------------------------------------------------- */
+.rcp_form {
+	text-align: left;
+	@include rem('font-size', 18px);
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"] {
+		width: 100%;
+	}
+
+	label[for="rcp_user_remember"],
+	label[for="rcp_auto_renew"],
+	#rcp_user_remember {
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 1;
+	}
+
+	label[for="rcp_user_remember"],
+	label[for="rcp_auto_renew"] {
+		padding: 0;
+		display: inline-block;
+		float: none;
+		width: auto !important;
+		vertical-align: middle;
+	}
+
+	#rcp_user_remember,
+	#rcp_auto_renew {
+		float: none;
+		vertical-align: middle;
+		display: inline-block;
+		margin: 0 7px 0 0;
+	}
+
+	.rcp_submit {
+		text-align: center;
+	}
+
+	.unit {
+		@include rem('margin-bottom', 40px);
+		margin-left: 3% !important;
+		margin-right: -.25em !important;
+	}
+
+	.grid {
+		margin-left: -3% !important;
+	}
+
+	legend {
+		margin-bottom: 20px !important;
+	}
+
+	label {
+		width: 100% !important;
+	}
+}
+
+#rcp_login_submit {
+	margin-right: 10px;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#rcp_submit {
+	width: 100%;
+}
+
+#rcp_subscription_levels {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.rcp_header {
+	@include rem('font-size', 35px);
+	text-align: center;
+}
+
+.rcp_subscription_level .rcp_level_description {
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	border: none;
+}
+
+.rcp_lost_password {
+	float: right;
+}
+
+.rcp_message {
+	@include rem('font-size', 18px);
+	@include rem('margin-bottom', $base);
+	color: #d15858;
+	p {
+		margin: 0;
+	}
+}
+
+.rcp_subscription_level {
+	padding-left: 2px;
+}
+
+.rcp_logged_in {
+	margin-bottom: $base;
+}
+
+#rcp_profile_display_name_wrap {
+	select {
+		margin-left: 1px;
+	}
+}
+
+.full-width-button {
+	display: block;
+	width: 100%;
+}
+
+#rcp_submit_wrap {
+	margin-top: $base*2;
+}
+
+.locked-options {
+	width: 485px;
+	max-width: 100%;
+	border: 2px solid #333;
+	padding: 15px;
+	margin: 50px auto 0px auto;
+
+	&.white-buttons {
+		border-color: white;
+		.form-divider {
+			border-color: white;
+		}
+	}
+
+	&.has-access {
+		display: none;
+	}
+
+	.stag-button {
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
+
+	.stag-button:nth-of-type(2) {
+		margin-top: 15px;
+	}
+
+	.form-divider {
+		display: block;
+		margin: 15px -15px;
+		border: 1px solid #333;
+	}
+}
+
+.rcp_subscription_level_name {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.rcp_subscription_message {
+	text-align: center;
+}
+
+p.rcp_error {
+	background: transparent !important;
+	color: inherit !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+}
+
+.author {
+	.block-button {
+		@include rem(margin-top, 50px);
+	}
+}

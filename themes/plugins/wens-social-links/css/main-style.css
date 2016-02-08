@@ -1,0 +1,170 @@
+.wen-side-socials {
+	margin-bottom: 20px;
+	padding-bottom:10px;
+
+}
+.wen-social-links{	
+	overflow: hidden;
+}
+
+.wen-side-socials ul li {
+	float: left;
+	list-style: none;
+	margin-right: 10px;
+}
+.wen-side-socials ul li a {
+    background: url("../images/socials.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 32px;
+    text-decoration: none;
+    text-indent: -999999px;
+    width: 30px;
+    transition:all 0.3s ease 0s;
+}
+
+/*rss link*/
+.wen-side-socials ul li a.wen-side-rss {background-position: 0px -32px;}
+.wen-side-socials ul li a.wen-side-rss:hover {background-position: 0px 0px;}
+
+/*faceboook link*/
+.wen-side-socials ul li a.wen-side-facebook {background-position: -31px -32px;}
+.wen-side-socials ul li a.wen-side-facebook:hover {background-position: -31px 0px;}
+
+/*twitter link*/
+.wen-side-socials ul li a.wen-side-twitter {background-position: -61px -32px;}
+.wen-side-socials ul li a.wen-side-twitter:hover {background-position: -61px 0px;}
+
+/*gplus link*/
+.wen-side-socials ul li a.wen-side-gplus {background-position: -91px -32px;}
+.wen-side-socials ul li a.wen-side-gplus:hover {background-position: -91px 0px;}
+
+/*linkedin link*/
+.wen-side-socials ul li a.wen-side-linkedin {background-position: -121px -32px;}
+.wen-side-socials ul li a.wen-side-linkedin:hover {background-position: -121px 0px ;}
+
+/*Pinterest link*/
+.wen-side-socials ul li a.wen-side-pinterest {background-position: -151px -32px;}
+.wen-side-socials ul li a.wen-side-pinterest:hover {background-position: -151px 0px ;}
+
+/*Digg link*/
+.wen-side-socials ul li a.wen-side-digg {background-position: -181px -32px;}
+.wen-side-socials ul li a.wen-side-digg:hover {background-position: -181px 0px ;}
+
+/*Myspace link*/
+.wen-side-socials ul li a.wen-side-myspace {background-position: -211px -32px;}
+.wen-side-socials ul li a.wen-side-myspace:hover {background-position: -211px 0px ;}
+
+/*Tumblr link*/
+.wen-side-socials ul li a.wen-side-tumblr {background-position: -241px -32px;}
+.wen-side-socials ul li a.wen-side-tumblr:hover {background-position: -241px 0px ;}
+
+/*Flickr link*/
+.wen-side-socials ul li a.wen-side-flickr {background-position: -271px -32px;}
+.wen-side-socials ul li a.wen-side-flickr:hover {background-position: -271px 0px ;}
+
+/*Reddit link*/
+.wen-side-socials ul li a.wen-side-reddit {background-position: -301px -32px;}
+.wen-side-socials ul li a.wen-side-reddit:hover {background-position: -301px 0px ;}
+
+/*Dribbble link*/
+.wen-side-socials ul li a.wen-side-dribbble {background-position: -331px -32px;}
+.wen-side-socials ul li a.wen-side-dribbble:hover {background-position: -331px 0px ;}
+
+/*Blogger link*/
+.wen-side-socials ul li a.wen-side-blogger {background-position: -361px -32px;}
+.wen-side-socials ul li a.wen-side-blogger:hover {background-position: -361px 0px ;}
+
+/*Yahoo link*/
+.wen-side-socials ul li a.wen-side-yahoo {background-position: -391px -32px;}
+.wen-side-socials ul li a.wen-side-yahoo:hover {background-position: -391px 0px ;}
+
+/*AIM link*/
+.wen-side-socials ul li a.wen-side-aim {background-position: -421px -32px;}
+.wen-side-socials ul li a.wen-side-aim:hover {background-position: -421px 0px ;}
+
+/*Skype link*/
+.wen-side-socials ul li a.wen-side-skype {background-position: -451px -32px;}
+.wen-side-socials ul li a.wen-side-skype:hover {background-position: -451px 0px ;}
+
+/*Paypal link*/
+.wen-side-socials ul li a.wen-side-paypal {background-position: -481px -32px;}
+.wen-side-socials ul li a.wen-side-paypal:hover {background-position: -481px 0px ;}
+
+/*Youtube link*/
+.wen-side-socials ul li a.wen-side-youtube {background-position: -511px -32px;}
+.wen-side-socials ul li a.wen-side-youtube:hover {background-position: -511px 0px ;}
+
+/*Vimeo link*/
+.wen-side-socials ul li a.wen-side-vimeo {background-position: -541px -32px;}
+.wen-side-socials ul li a.wen-side-vimeo:hover {background-position: -541px 0px ;}
+
+/*Dailymotion link*/
+.wen-side-socials ul li a.wen-side-dailymotion {background-position: -571px -32px;}
+.wen-side-socials ul li a.wen-side-dailymotion:hover {background-position: -571px 0px ;}
+
+/*Netflix link*/
+.wen-side-socials ul li a.wen-side-netflix {background-position: -601px -32px;}
+.wen-side-socials ul li a.wen-side-netflix:hover {background-position: -601px 0px ;}
+
+/*Instagram link*/
+.wen-side-socials ul li a.wen-side-instagram {background-position: -630px -30px;}
+.wen-side-socials ul li a.wen-side-instagram:hover {background-position: -630px 0px ;}
+
+/*Stackoverflow link*/
+.wen-side-socials ul li a.wen-side-stackoverflow {background-position: -660px -30px;}
+.wen-side-socials ul li a.wen-side-stackoverflow:hover {background-position: -660px 0px ;}
+
+
+
+
+
+
+/*css for tooltips*/
+
+	.arrow:after {
+		background:#555;
+	}
+	.ui-tooltip {
+		background:#555;
+		position: absolute;
+		z-index: 9999;
+		max-width: 300px;
+		padding: 5px 10px;
+		color: white;
+		font: normal 11px "Helvetica", Sans-Serif;
+		text-transform: capitalize;
+	}
+	.arrow {
+		width: 70px;
+		height: 16px;
+		overflow: hidden;
+		position: absolute;
+		left: 50%;
+		margin-left: -35px;
+		bottom: -16px;
+	}
+	.arrow.top {
+		top: -16px;
+		bottom: auto;
+	}
+	.arrow.left {
+		left: 20%;
+	}
+	.arrow:after {
+		content: "";
+		position: absolute;
+		left: 20px;
+		top: -20px;
+		width: 25px;
+		height: 25px;
+		box-shadow: 6px 5px 9px -9px black;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		tranform: rotate(45deg);
+	}
+	.arrow.top:after {
+		bottom: -20px;
+		top: auto;
+	}

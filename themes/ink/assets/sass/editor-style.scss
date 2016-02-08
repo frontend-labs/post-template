@@ -1,0 +1,49 @@
+@import "compass/css3";
+@import "preboot";
+@import url('http://fonts.googleapis.com/css?family=Roboto+Slab%3A400%2C700%2C400italic%2C700italic%7CMontserrat%3A700');
+
+body {
+	font-family: "Roboto Slab", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 93.75%;
+	line-height: 1.55;
+	color: #333;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: #F0AD2C;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Montserrat";
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+h1 { @include rem('font-size', $heading-size-1); }
+h2 { @include rem('font-size', $heading-size-2); }
+h3 { @include rem('font-size', $heading-size-3); }
+h4 { @include rem('font-size', $heading-size-4); }
+h5 { @include rem('font-size', $heading-size-5); }
+h6 { @include rem('font-size', $heading-size-6); }
+
+tt,
+kbd,
+pre,
+code,
+samp {
+	font-family: 'Andale Mono', AndaleMono, Consolas, Monaco, monospace;
+	font-size: 100%; /* 16px */
+}
+
+
+blockquote p {
+	color: #BDBDBD;
+}

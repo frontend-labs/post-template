@@ -1,0 +1,8 @@
+efbl_read_more_text on feed.php:347
+efbl_share_text on feed.php:348
+efbl_like_this_text on feed.php:378
+efbl_and_text on feed.php:379
+efbl_other_text on feed.php:380
+efbl_others_text on feed.php:381
+efbl_comment_on_text on feed.php:454
+efbl_error_message on feed.php:506

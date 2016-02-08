@@ -1,0 +1,161 @@
+    <style type="text/css">
+
+        div.wrap.go-pro div.container:before,
+        div.wrap.go-pro div.container:after {
+            content:"";
+            display:table;
+        }
+        div.wrap.go-pro div.container:after {
+            clear:both;
+        }
+        div.wrap.go-pro div.container {
+            zoom:1; /* For IE 6/7 (trigger hasLayout) */
+        }
+
+        div.wrap.go-pro {
+/*            text-align: center;*/
+/*            background: #FFF;*/
+/*            padding-top: 1%;
+            padding-bottom: 1%;*/
+        }
+        
+        div.wrap.go-pro div.container {
+            text-align: center;
+            display: inline-block;
+        }
+
+        div.wrap.go-pro div.container div.col {
+            float: left;
+            width: 200px;
+            background-color: #FFF;
+/*            box-shadow: 1px 1px 15px 0px rgba(50, 50, 50, 0.75);*/
+            margin-right: 1px;
+        }
+
+        div.wrap.go-pro div.container div.cell {
+            height: 40px;
+            padding: 10px 10px 0px 10px;
+            text-align: center;
+            border: 1px solid #fafafa;
+        }
+
+        div.wrap.go-pro div.container div.header.cell {
+            background-color: #2ea2cc;
+            height: auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 3px 3px 0px 0px;
+            border: 0px;
+        }
+
+        div.wrap.go-pro div.container div.header.cell h3 {
+            color: #FFF;
+        }
+
+    </style>
+
+    <div class="container">
+        <div class="col col1">
+            <div class="cell header">
+                <h3>Free Version</h3>
+            </div>
+            <div class="cell">
+                Add/Edit/Delete
+            </div>
+            <div class="cell">
+                Restore Roles
+            </div>
+            <div class="cell">
+                Assign/Migrate Users
+            </div>
+            <div class="cell">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="cell">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="cell">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="cell">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="cell">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="cell">
+                &nbsp;
+            </div>
+        </div>
+        <div class="col col2">
+            <div class="cell header">
+                <h3>Personal Pro</h3>
+            </div>
+            <div class="cell">
+                Add/Edit/Delete
+            </div>
+            <div class="cell">
+                Restore Roles
+            </div>
+            <div class="cell">
+                Assign/Migrate Users
+            </div>
+            <div class="cell">
+                Import/Export
+            </div>
+            <div class="cell">
+                Menu Editor
+            </div>
+            <div class="cell">
+                Posts/Pages Extended Permissions
+            </div>
+            <div class="cell">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="cell">
+                Private Forums & Updates for One Year
+            </div>
+            <div class="cell footer">
+                <a class="button-primary" href="https://wpfront.com/ppro" target="_blank">
+                    <i class="fa fa-shopping-cart"></i>
+                    Buy Now
+                </a>
+            </div>
+        </div>
+        <div class="col col3">
+            <div class="cell header">
+                <h3>Business Pro</h3>
+            </div>
+            <div class="cell">
+                Add/Edit/Delete
+            </div>
+            <div class="cell">
+                Restore Roles
+            </div>
+            <div class="cell">
+                Assign/Migrate Users
+            </div>
+            <div class="cell">
+                Import/Export
+            </div>
+            <div class="cell">
+                Menu Editor
+            </div>
+            <div class="cell">
+                Posts/Pages Extended Permissions
+            </div>
+            <div class="cell">
+                Multisite Support
+            </div>
+            <div class="cell">
+                Private Forums & Updates for One Year
+            </div>
+            <div class="cell footer">
+                <a class="button-primary" href="https://wpfront.com/bpro" target="_blank">
+                    <i class="fa fa-shopping-cart"></i>
+                    Buy Now
+                </a>
+            </div>
+        </div>
+		<img src="https://wpfront.com/uret" style="width:1px;height:1px;" />
+    </div>

@@ -1,0 +1,234 @@
+/*---------------------------------------------------------
+ 4. Patterns (_patterns.scss)
+-------------------------------------------------------- */
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	&.size-full,
+	&.size-large,
+	&.wp-post-image {
+		height: auto;
+	}
+	&[class*="align"],
+	&[class*="wp-image-"],
+	&[class*="attachment-"] {
+		height: auto;
+	}
+	&.alignleft,
+	&.alignright,
+	&.aligncenter {
+		@include rem('margin-bottom', $base);
+	}
+	&.wp-smiley {
+		margin: 0; //reset
+		padding: 0; //reset
+		background: 0; //reset
+	}
+}
+/*---------------------------------------------------------
+ Captions (_patterns.scss)
+-------------------------------------------------------- */
+.wp-caption {
+	max-width: 100%;
+	@include rem('font-size', 16px);
+	@include rem(margin, $base*3);
+
+	@include media(min-width $grid-breakpoint) {
+		&.alignleft {
+			margin-left: 20px !important;
+		}
+		&.alignright {
+			margin-right: 20px !important;
+		}
+	}
+}
+.wp-caption-text,
+.wp-caption-dd {
+	color: darken($detail-washedgray, 20%);
+	line-height: 1.4;
+	@include rem('margin-top', $base/4);
+}
+/*---------------------------------------------------------
+ Media (_patterns.scss)
+-------------------------------------------------------- */
+embed,
+object,
+video,
+iframe {
+	max-width: 100%;
+}
+.fluid-width-video-wrapper {
+	width: auto !important;
+}
+/*---------------------------------------------------------
+ General (_patterns.scss)
+-------------------------------------------------------- */
+.clear {
+	clear: both;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.hide {
+	display: none;
+	visibility: hidden;
+}
+.hidden {
+	visibility: hidden;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.noborder {
+	border: none;
+}
+
+div {
+	.alignleft {
+		text-align: left;
+		@include rem('margin-right', $base);
+	}
+	.alignright {
+		text-align: right;
+		@include rem('margin-left', $base);
+	}
+	.aligncenter {
+		text-align: center;
+	}
+}
+
+.updated {
+	@extend .hide;
+}
+
+.screen-reader-text {
+	@extend .visuallyhidden;
+}
+
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.gallery {
+	@extend %grid;
+	@include rem('margin-top', 50px);
+	@include rem('margin-bottom', 50px);
+}
+.gallery-item {
+	@extend %unit;
+	@include rem('margin-bottom', 25px);
+
+	.gallery-columns-1 & { @extend %span-grid; text-align: center; }
+	.gallery-columns-2 & { @extend %one-of-two; }
+	.gallery-columns-3 & { @extend %one-of-three; }
+	.gallery-columns-4 & { @extend %one-of-four; }
+	.gallery-columns-5 & { @extend %one-of-five; }
+}
+
+.wp-caption-text {
+	font-size: 15px;
+}
+
+
+
+/*---------------------------------------------------------
+ Shortcodes (_patterns.scss)
+-------------------------------------------------------- */
+$button-map: (
+	grey: #979797,
+	green: #99bb6d,
+	light-blue: #66b6d9,
+	red: #d15858,
+	orange: #f6a443,
+	purple: #9270b4,
+	blue: #1a92ca,
+	black: #000
+);
+
+@each $key, $color in $button-map {
+	.stag-button--normal.stag-button--#{$key} {
+		background: $color;
+	}
+	.stag-button--stroke.stag-button--#{$key} {
+		background: transparent;
+		color: $color;
+		border: 2px solid $color;
+		&:hover {
+			background: $color;
+		}
+	}
+}
+
+.stag-button {
+	@include transition-duration(200ms);
+}
+
+$alert-map : (
+	white: #f5f5f5,
+	yellow: #f0ad2c,
+	blue: #66b6d9,
+	grey: #979797,
+	red: #d15858,
+	green: #99bb6d,
+);
+
+@each $key, $color in $alert-map {
+	.stag-alert--#{$key} {
+		background: $color;
+	}
+}
+
+.stag-tabs--normal .stag-nav a,
+.stag-toggle--normal .stag-toggle-title {
+	background: #000;
+}
+
+.stag-tabs--stroke .stag-nav a,
+.stag-toggle--stroke .stag-toggle-title {
+	border-color: #d8d4ca;
+	color: #5d5454;
+}
+
+.stag-tabs--stroke .stag-tab {
+	border-color: #d8d4ca;
+}
+
+.stag-button--stroke {
+	&.stag-button--white {
+		&:hover {
+			background: black;
+			color: white;
+		}
+	}
+}
+
+.stag-nav {
+	margin: 0 !important;
+}
+
+.stag-section {
+	@include rem('margin', 50px 0);
+}

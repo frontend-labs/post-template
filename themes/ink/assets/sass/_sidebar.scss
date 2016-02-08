@@ -1,0 +1,261 @@
+/*---------------------------------------------------------
+ 7. Sidebar (_sidebar.scss)
+-------------------------------------------------------- */
+#sidebar {
+	@include rem('margin-bottom', $base*4);
+}
+/*---------------------------------------------------------
+ Widgets (_sidebar.scss)
+-------------------------------------------------------- */
+.widgettitle {
+	@include rem('margin-bottom', $base/2);
+	@include rem('font-size', 25px);
+}
+
+.widget-area {
+	.widget {
+		@include rem('margin-bottom', $base);
+	}
+}
+
+.widget_recent_entries {
+	li {
+		@include rem('margin-bottom', $base, true);
+		@include rem('font-size', 18px);
+	}
+	a {
+		color: #000;
+	}
+	.post-date {
+		display: block;
+		color: #a3a3a3;
+		@include rem('font-size', 16px);
+	}
+}
+
+.static-content-cover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@include background-size(cover);
+	background-position: center;
+	z-index: 1;
+}
+
+.stag-custom-widget-area {
+	.widgettitle {
+		@include rem('margin-bottom', 90px);
+		@include rem('font-size', 30px);
+	}
+	.widget {
+		@include rem('padding', 90px 0);
+	}
+
+	.full-wrap .widgettitle,
+	.widget:not(.full-wrap),
+	.widget_text {
+		@extend %inside;
+	}
+}
+
+.textwidget {
+	.site-nav & {
+		@include rem('font-size', 16px);
+	}
+}
+
+.stag_widget_recent_posts,
+.stag_widget_static_content {
+	text-align: center;
+	position: relative;
+	.inner-section {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.stag_widget_recent_posts {
+	text-align: center;
+	.entry-header {
+		@include rem('margin-bottom', 10px, true);
+	}
+	.entry-title {
+		@include rem('font-size', 30px, true);
+		font-family: inherit;
+		text-transform: none;
+		font-weight: normal;
+	}
+	article {
+		@include rem('margin-bottom', 70px);
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.all-posts {
+		@include rem('margin-top', 80px);
+	}
+}
+
+.stag-twitter {
+	li {
+		@include rem('margin-bottom', 20px, true);
+	}
+	time {
+		color: #a3a3a3;
+		@include rem('font-size', 14px);
+		a {
+			color: inherit;
+		}
+	}
+	.twitter-follow-button {
+		@include rem('margin-top', 20px);
+		@include rem('padding', 4px 14px);
+		@include rem('font-size', 14px);
+		&:hover {
+			color: white;
+		}
+	}
+}
+
+.site-nav__section {
+	li {
+		@include rem('margin-bottom', 10px);
+	}
+}
+
+.widget_categories {
+	ul {
+		color: #a3a3a3;
+	}
+}
+
+.stag_widget_static_content .page {
+	padding-top: 0 !important;
+}
+
+.stag_widget_recent_posts_grid {
+	padding: 0 !important;
+	overflow: hidden;
+	margin-top: 2px;
+
+	.entry-title {
+		@include rem(font-size, 35px, true);
+	}
+
+	.widgettitle {
+		text-align: center;
+		@include rem(margin-top, 50px);
+		@include rem(margin-bottom, 50px);
+	}
+
+	.entry-header {
+		margin-bottom: 0 !important;
+	}
+
+	.hentry {
+		.header-over & {
+			padding-top: 0 !important;
+		}
+	}
+}
+
+.site-contributors {
+	text-align: center;
+	padding-bottom: 0 !important;
+	&.widget:last-of-type {
+		position: relative;
+		bottom: -2px;
+		margin-top: -2px;
+	}
+
+	.widgettitle {
+		@include rem(margin-bottom, 50px);
+	}
+}
+
+.contributors-list {
+	@extend %cf;
+	border-top: 2px solid #333;
+	border-bottom: 2px solid #333;
+
+	.contributor {
+		@include rem(padding, 35px 15px);
+		@include media(max-width $grid-breakpoint) {
+			border-bottom: 2px solid #333;
+			&:last-of-type {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.inside {
+		padding: 0;
+	}
+
+	.contributor-avatar {
+		img {
+			max-width: 170px;
+			overflow: hidden;
+			border-radius: 50%;
+			@include transition(all 150ms ease-out);
+			&:hover {
+				opacity: .9;
+				@include transform(scale(1.05));
+			}
+		}
+	}
+
+	.contributor-name {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		word-break: break-all;
+		word-wrap: break-word;
+		@include rem(font-size, 15px);
+		@include rem(margin-top, 40px);
+
+		a {
+			color: inherit;
+			&:hover {
+				opacity: .92;
+			}
+		}
+	}
+
+	.contributor-avatar:hover img {
+		will-change: transform, opacity;
+	}
+
+	@include media($grid-breakpoint) {
+		.contributor {
+			float: left;
+			display: inline-block;
+			vertical-align: middle;
+			border-left: 2px solid #333;
+		}
+
+		.one-column { width: 100%; }
+		.two-column { width: (100%/2); }
+		.three-column { width: (100%/3); }
+		.four-column { width: (100%/4); }
+
+		.one-column:first-of-type,
+		.two-column:first-of-type,
+		.three-column:first-of-type {
+			border-left: none;
+		}
+
+		.four-column {
+			position: relative;
+			bottom: -2px;
+			margin-top: -2px;
+			border-bottom: 2px solid #333;
+			&:nth-child(4n+1) {
+				border-left: none;
+			}
+		}
+	}
+}

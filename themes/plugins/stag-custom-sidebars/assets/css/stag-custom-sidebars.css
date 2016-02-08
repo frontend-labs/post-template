@@ -1,0 +1,78 @@
+.stag-add-widget{
+	padding: 15px;
+	border-width: 0 1px 1px;
+	border-style: none solid solid;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background-color: #FCFCFC;
+	border-color: #DFDFDF;
+}
+
+.stag-widgets-holder-wrap{
+	padding: 0;
+	margin: 10px 7px 20px;
+	max-width: 288px;
+}
+
+.stag-widgets-holder-wrap h3:hover{
+	cursor: default;
+}
+
+.stag-add-widget .submit{
+	padding: 10px 0 0;
+	margin: 0;
+}
+
+.stag-add-widget input[type="text"]{
+	width: 100%;
+}
+
+.sidebar-stag-custom{
+	position: relative;
+}
+
+.sidebar-stag-custom .description{
+	-webkit-user-select: initial;
+	-moz-user-select: initial;
+	-ms-user-select: initial;
+	user-select: initial;
+}
+
+.scs-area-delete{
+	position: absolute;
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	z-index: 50;
+	right: 40px;
+	top: 13px;
+	font-size: 1.5em;
+	color: #cecece;
+}
+
+.branch-3-7 .scs-area-delete,
+.branch-3-6 .scs-area-delete,
+.branch-3-5 .scs-area-delete,
+.branch-3-4 .scs-area-delete {
+	right: 30px;
+	top: 10px;
+}
+
+.rtl .scs-area-delete{
+	right: auto;
+	left: 30px;
+}
+
+.scs-area-delete:hover{
+	color: #e74c3c;
+}
+
+.spinner.activate{
+	display: block !important;
+	position: absolute;
+	top: 10px;
+	right: 4px;
+	background-color: #ECECEC;
+}
