@@ -4,6 +4,8 @@
   "description": "post-template",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "browser": "browser-sync start --server --files 'jade/*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/frontend-labs/post-template#readme",
   "devDependencies": {
+    "browser-sync": "^2.11.1",
     "jade": "^1.11.0",
     "map-stream": "0.0.6",
     "vinyl-fs": "^2.3.1"
