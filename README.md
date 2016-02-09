@@ -43,3 +43,9 @@ block post
 		code.
 			var hola = 'ejemplo de string';
 ```
+
+## Watch
+
+```bash
+watch -n 1 node index.js
+```
