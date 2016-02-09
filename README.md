@@ -1,5 +1,5 @@
 # post-template
-post-template for frontendlabs
+Template for post in [frontendlabs.io](http://frontendlabs.io/)
 
 ## Clone
 
@@ -16,7 +16,7 @@ sudo npm install -d
 
 ## Ready!
 
-Open *jade/_config.jade* and update that with your post data 
+Open *jade/_config.jade* and update it with your post data 
 
 ```jade
 - var post = {}
@@ -25,7 +25,7 @@ Open *jade/_config.jade* and update that with your post data
 - post.author          = 'Jan Sanchez'
 ```
 
-Then open *jade/post.jade* and let's start to make your new post
+Then open *jade/post.jade* and start making your new post!
 
 ```jade
 extends ./jade/_layout.jade
@@ -50,7 +50,7 @@ block post
 watch -n 1 node index.js
 ```
 
-## Is it works?
+## Does it work?
 
 ```bash
 google-chrome output/post.html
@@ -59,4 +59,4 @@ google-chrome output/post.html
 ![it works](themes/general/img/post.png)
 
 
-## Enjoy!
+## Enjoy it!
