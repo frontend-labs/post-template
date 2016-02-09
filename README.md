@@ -25,7 +25,7 @@ Open *jade/_config.jade* and update it with your post data
 - post.author          = 'Jan Sanchez'
 ```
 
-Then open *jade/post.jade* and start making your new post!
+Then open *jade/index.jade* and start making your new post!
 
 ```jade
 extends ./jade/_layout.jade
@@ -53,7 +53,13 @@ watch -n 1 node index.js
 ## Does it work?
 
 ```bash
-google-chrome output/post.html
+google-chrome output/index.html
+```
+
+## BrowserSync
+
+```bash
+npm run browser
 ```
 
 ![it works](themes/general/img/post.png)
