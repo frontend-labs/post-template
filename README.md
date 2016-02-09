@@ -56,4 +56,7 @@ watch -n 1 node index.js
 google-chrome output/post.html
 ```
 
+![it works](themes/general/img/post.png)
+
+
 ## Enjoy!
