@@ -50,4 +50,10 @@ block post
 watch -n 1 node index.js
 ```
 
+## Is it works?
+
+```bash
+google-chrome output/post.html
+```
+
 ## Enjoy!
