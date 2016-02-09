@@ -13,6 +13,31 @@ git clone https://github.com/frontend-labs/post-template.git
 sudo npm install -d
 ```
 
+## Watch
+
+```bash
+npm run watch
+```
+
+### OR
+
+```bash
+watch -n 1 node index.js
+```
+
+## Does it work?
+
+## BrowserSync
+
+```bash
+npm run browser
+```
+
+## Terminal + Google Chrome
+
+```bash
+google-chrome output/index.html
+```
 
 ## Ready!
 
@@ -44,27 +69,6 @@ block post
 			var hola = 'ejemplo de string';
 ```
 
-## Watch
-
-```bash
-npm run watch
-```
-
-```bash
-watch -n 1 node index.js
-```
-
-## Does it work?
-
-```bash
-google-chrome output/index.html
-```
-
-## BrowserSync
-
-```bash
-npm run browser
-```
 
 ![it works](themes/general/img/post.png)
 
