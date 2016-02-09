@@ -1,0 +1,36 @@
+div.socialicons{float:left;display:block;margin-right: 10px;line-height: 1;}div.socialiconsv{line-height: 1;}div.socialicons p{margin-bottom: 0px !important;margin-top: 0px !important;padding-bottom: 0px !important;padding-top: 0px !important;}div.social4iv{background: none repeat scroll 0 0 #FFFFFF;border: 1px solid #aaa;border-radius: 3px 3px 3px 3px;box-shadow: 3px 3px 3px #DDDDDD;padding: 3px;position: fixed;text-align: center;top: 55px;width: 68px;display:none;}div.socialiconsv{padding-bottom: 5px;}
+img#wpstats{display:none}
+body,
+.site,
+hr:not(.stag-divider)::before {
+background-color: #ffffff;
+}
+body, .entry-subtitle {
+font-family: "Roboto Slab";
+}
+a,
+.archive-header__title span,
+.footer-menu a:hover {
+color: #f0ad2c;
+}
+h1, h2, h3, h4, h5, h6, .button, .stag-button, input[type="submit"], input[type="reset"], .button-secondary, legend, .rcp_subscription_level_name {
+font-family: "Montserrat";
+}
+.post-grid {
+border-color: #ffffff;
+}
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+
+.article-cover { background-color: #000000; }
+
+.background-video { opacity: 0.4; }
+
+.post{
+	position: relative;
+	margin-bottom: 200px !important;
+}
+
+.article-cover__background { 
+	background-image: opacity: 0.4;
+}
+
