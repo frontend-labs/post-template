@@ -47,6 +47,10 @@ block post
 ## Watch
 
 ```bash
+npm run watch
+```
+
+```bash
 watch -n 1 node index.js
 ```
 

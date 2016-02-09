@@ -4,8 +4,9 @@
   "description": "post-template",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "browser": "browser-sync start --server --index 'output/index.html'",
+    "html": "node index.js",
+    "watch": "watch 'npm run html'",
+    "browser": "browser-sync start --server --index 'output/index.html' --files 'output/*.html'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "browser-sync": "^2.11.1",
     "jade": "^1.11.0",
     "map-stream": "0.0.6",
-    "vinyl-fs": "^2.3.1"
+    "vinyl-fs": "^2.3.1",
+    "watch": "^0.17.1"
   }
 }
