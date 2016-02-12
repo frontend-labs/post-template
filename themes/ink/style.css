@@ -3506,12 +3506,15 @@ pre.prettyprint {
 /* 2016 */
 
 /* added by jansanchez */
+p.pre-irrelevant {
+	margin-bottom: 2.25rem;
+}
+
 p.irrelevant {
 	color: darkgray;
 	font-size: medium;
-	margin-bottom: 2.75rem;
+	margin-bottom: 2.80rem;
 }
-
 
 /* added by lmsardon */
 .entry-header {
