@@ -7,6 +7,12 @@ Template for post in [frontendlabs.io](http://frontendlabs.io/)
 git clone https://github.com/frontend-labs/post-template.git
 ```
 
+## Dependencies
+
+```
+node version >= 4.2.6
+```
+
 ## Install
 
 ```
