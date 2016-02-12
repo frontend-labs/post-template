@@ -2,10 +2,11 @@ extends ./jade/_layout.jade
 block post
 	//- aquí empieza el contenido del post
 	h2 ¿Qué significa hacerle Fork a un repositorio?
-	p.
-		Hacerle fork a un repositorio significa copiarlo. Copiar un repositorio nos permite experimentar libremente sin afectar al proyecto original, obviamente porque nuestro fork es una copia, que se encontrará en nuestra cuenta de github, bitbucket o algún otro servicio como estos.
+	p	Hacerle fork a un repositorio significa copiarlo. Copiar un repositorio nos 	permite experimentar libremente sin afectar al proyecto original, obviamente porque 
+		b nuestro fork es una copia
+		|, que se encontrará en nuestra cuenta de github, bitbucket o algún otro servicio como estos.
 
-		Por lo general, las copias se utilizan para de proponer cambios en el proyecto de otra persona u organización ó para utilizar el proyecto de otra persona como punto de partida para nuevas ideas.
+	p	Por lo general, las copias se utilizan para de proponer cambios en el proyecto de otra persona u organización ó para utilizar el proyecto de otra persona como punto de partida para nuevas ideas.
 
 	h2 Haciendo fork a un repositorio
 
@@ -16,31 +17,87 @@ block post
 		, si no tienes una cuenta de github, entonces antes debes 
 		a(href="https://github.com/join?source=frontendlabs.io", target="_blank", title="crear cuenta de github") crearla
 		|.
-	p 	Una vez logueados, 
+	p.pre-irrelevant 	Una vez logueados, 
 		b haremos un fork de este repositorio
 		|. Para esto nos dirigimos al repositorio de 
 		a(href="https://github.com/facebook/relay", target="_blank", title="relay - facebook") relay
 		|.
-
-	p	En la página principal del repositorio de relay, podremos observar en la parte superior derecha el botón con la opción 
+		|En la página principal del repositorio de relay, podremos observar en la parte superior derecha el botón con la opción 
 		b Fork
-		|. Lo presionamos y comenzará a realizar un Fork de ese repositorio hacia nuestra cuenta de Github. 
+		|. Lo presionamos y comenzará a realizar un Fork de ese repositorio 
+		b hacia nuestra cuenta de Github
+		|. 
 
-	p.irrelevant	En algunos casos en los que tengamos una cuenta personal asociada a alguna organización, Github nos pedíra que especifiquemos si el Fork se hará sobre neustra cuenta personal o en alguna de nuestras cuentas de organización. 
+	p.irrelevant	En algunos casos en los que tengamos una cuenta personal asociada a alguna organización, Github nos pedirá que especifiquemos si el Fork se hará sobre nuestra cuenta personal o en alguna de nuestras cuentas de organización.
 
 	p
 		img(src="http://frontendlabs.io/wp-content/uploads/2016/02/fork-repository.png", alt="forked repository")
 
+	p Una vez que le proceso haya terminado, habremos copiado ese repositorio a nuestra cuenta, así que luego de esto veremos un encabezado parecido al siguiente:
+
 	p
 		img(src="http://frontendlabs.io/wp-content/uploads/2016/02/forked.png", alt="forked repository")
 
+	p	Como podemos ver Github nos indica que ahora tenemos en nuestra cuenta un nuevo repositorio llamado 
+		b relay 
+		|y vemos que debajo dice 
+		b 'forked form facebook/relay' 
+		|(copiado desde facebook/relay).
+
+	h2	Trabajando con un repositorio Forked
+
+	p	Por lo general, cuando se hace Fork de un repositorio se realizan modificaciones sobre este repositorio para manipular la versión original sin causar problemas, es como tener un 'patio de juegos' para poder hacer lo que deseemos con el proyecto.
+
+	p Pero a veces 
+		b queremos hacer mejoras sobre ese proyecto 
+		|y enviar nuestras mejoras al dueño original para que las implemente ó 
+		b simplemente queremos seguir teniendo las actualizaciones del proyecto principal
+		|.
+
+	p Esta vez nos enfocaremos en seguir teniendo las actualizaciones del proyecto principal, realizando los siguientes pasos:
+
+
+	h2 Clonando nuestro repositorio Forked
+
+	p Clonamos nuestro nuevo repositorio Forked, y 
+		b nombraremos 
+		span(class="inline_folder") relay_forked
+		| a la carpeta que almacenará nuestro proyecto.
+
 	pre(class="prettyprint lang-sh")
 		code.
-			git fork https://github.com/facebook/relay.git
+			git clone https://github.com/jansanchez/relay.git relay_forked
 
-	p Cuando hacemos "fork" a un repositorio de Github, muchas veces queremos seguir teniendo las actualizaciones desde el repositorio principal, por lo cual en este artículo te explicaremos como mantener actualizado un repositorio "forked".
+	p	Una vez que terminamos de clonar nuestro nuevo repositorio, debemos indicarle a 
+		a(href="http://frontendlabs.io/?s=git", title="git", target="_blank") git 
+		| que nuestro repositorio tiene una ubicación remota, en nuestro caso la url de la ubicación remota es: https://github.com/facebook/relay.git, y la agregamos a nuestro repositorio local escribiendo el siguiente comando:
+
+	pre(class="prettyprint lang-sh")
+		code.
+			git remote add upstream https://github.com/facebook/relay.git
+
+	p Con esto le estamos diciendo a git: Que agregue la 
+		b ubicación remota 
+		|llamada 
+		b upstream
+		| . Upstream es un término inglés que se puede interpretar como "principal" o "producción".
+
+	p Luego de esto, ya estamos listos para poder actualizar nuestro repositorio desde la url remota principal, escribiendo el siguiente comando:
+
+	pre(class="prettyprint lang-sh")
+		code.
+			git fetch upstream
+
+	p De esta forma obtenemos todas las ramas actualizadas desde esa ubicación remota.
+
+	p Pero aún no tendremos los cambios en nuestra rama 
+		b master
+		| o la rama que estemos usando. Para ello tenemos que hacer un simple merge o rebase para poder http://stackoverflow.com/questions/7244321/how-to-update-a-github-forked-repository 
+
+
 	p texto y un enlace
 		a(href="http://frontendlabs.io/") Frontendlabs.io
+
 	p texto que contiene el nombre de una
 		span(class="inline_folder") carpeta de un
 		span(class="inline_file") archivo y de un
