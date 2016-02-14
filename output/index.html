@@ -39,13 +39,13 @@
           <h2>Haciendo fork a un repositorio</h2>
           <p>Para poner en práctica este concepto vamos a hacerle fork al repositorio de relay, relay es un Framework Javascript creado por el equipo de desarrollo de Facebook.</p>
           <p>	Para llevar a cabo esto, primero necesitamos loguearnos en nuestra cuenta de <a href="https://github.com/login?return_to=https://github.com/facebook/relay" target="_blank" title="login en github">github</a>, si no tienes una cuenta de github, entonces antes debes <a href="https://github.com/join?source=frontendlabs.io" target="_blank" title="crear cuenta de github">crearla</a>.</p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/fork-repository.png" alt="forked repository"></p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/fork-repository.png" alt="fork github repository" class="aligncenter"></p>
           <p class="pre-irrelevant">	Una vez logueados, <b>haremos un fork de este repositorio</b>. Para esto nos dirigimos al repositorio de <a href="https://github.com/facebook/relay" target="_blank" title="relay - facebook">relay</a>.
             En la página principal de este repositorio veremos que en la parte superior derecha hay un botón con la opción <b>Fork</b>. Lo presionamos y con esto empezaremos a realizar un Fork de ese repositorio <b>hacia nuestra cuenta de Github</b>. 
           </p>
           <p class="irrelevant">	En algunos casos en los que tengamos una cuenta personal asociada a alguna organización, Github nos pedirá que especifiquemos si el Fork se hará sobre nuestra cuenta personal o en alguna de nuestras cuentas de organización.</p>
           <p>Una vez que este proceso haya terminado, habremos copiado ese repositorio a nuestra cuenta, así que luego de esto veremos un encabezado parecido al siguiente:</p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/forked.png" alt="forked repository"></p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/forked.png" alt="forked repository" class="aligncenter"></p>
           <p>	Como podemos ver Github nos indica que ahora tenemos en nuestra cuenta un nuevo repositorio llamado <b>relay </b>y vemos que debajo dice <b>'forked from facebook/relay' </b>(copiado desde facebook/relay).</p>
           <h2>	Trabajando con un repositorio Forked</h2>
           <p>	Por lo general, cuando se hace Fork de un repositorio se realizan modificaciones sobre este repositorio para manipular la versión original sin causar problemas, es como tener nuestro propio 'patio de juegos' para poder hacer lo que deseemos con el proyecto.</p>
@@ -57,7 +57,6 @@
 </code></pre>
           <p>	Una vez que terminamos de clonar nuestro nuevo repositorio, ingresamos a la carpeta <span class="inline_folder">relay_forked</span></p>
           <pre class="prettyprint lang-sh"><code>cd relay_forked
-
 </code></pre>
           <p>	Y luego debemos indicarle a <a href="http://frontendlabs.io/?s=git" title="git" target="_blank">git </a>que nuestro repositorio tiene una <b>ubicación remota</b>, en nuestro caso la url de la ubicación remota es: <a href="https://github.com/facebook/relay" title="relay - facebook" target="_blank">https://github.com/facebook/relay.git</a>, y la agregamos a nuestro repositorio local escribiendo el siguiente comando:</p>
           <pre class="prettyprint lang-sh"><code>git remote add upstream https://github.com/facebook/relay.git
@@ -78,9 +77,10 @@
           <pre class="prettyprint lang-sh"><code>git rebase upstream/master
 </code></pre>
           <p>	De esta manera hemos aprendido cómo comenzar a trabajar con proyectos Forked en Github, espero que les haya servido de algo este pequeño artículo.</p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/fork-github-repository.png" alt="fork-github-repository" class="aligncenter"></p>
           <h2>Referencias bibliográficas</h2>
           <p>	GITHUB HELP. <i>Fork A Repo. </i>[En línea] [Fecha de consulta: 12 de Febrero del 2016]. <br>Disponible en: <a href="https://help.github.com/articles/fork-a-repo/" target="_blank" title="fork a repo - github">fork a repo - github</a>.</p>
-          <p>	GITHUB HELP. <i>Syncing a fork. </i>[En línea] [Fecha de consulta: 12 de Febrero del 2016]. <br>Disponible en:<a href="https://help.github.com/articles/syncing-a-fork/" target="_blank" title="syncing a fork - github">syncing a fork - github</a>.</p>
+          <p>	GITHUB HELP. <i>Syncing a fork. </i>[En línea] [Fecha de consulta: 12 de Febrero del 2016]. <br>Disponible en: <a href="https://help.github.com/articles/syncing-a-fork/" target="_blank" title="syncing a fork - github">syncing a fork - github</a>.</p>
           <p>	GITHUB GUIDES. <i>Forking Projects. </i>[En línea] [Fecha de publicación: 23 de Enero del 2014] [Fecha de consulta: 12 de Febrero del 2016]. <br>Disponible en: <a href="https://guides.github.com/activities/forking/" target="_blank" title="Forking Projects - github">Forking Projects - github</a>.</p>
           <!-- end-->
         </div>
