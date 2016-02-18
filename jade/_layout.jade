@@ -20,18 +20,19 @@ html(lang="es", xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#")
 		script(type="text/javascript", src="../themes/general/js/run_prettify.js")
 
 	body(class='single single-post single-format-standard chrome header-over stagtools')
-		div(class="article-cover article-cover")
-			div(class="article-cover__background stag-image--none")
-				div(class="article-cover__inner")
-					div(class="article-cover__content")
-						h1(class="entry-title")
-							a(href="" rel="bookmark") #{post.title}
-						footer(class="entry-meta")
-							span(class="posted-on")
-							a(href="" title="" rel="bookmark")
-								time(class="entry-date published") #{post.date}
-								span(class="author vcard")
-									a(class="url fn n" href="") #{post.author}
+		if post.header
+			div(class="article-cover article-cover")
+				div(class="article-cover__background stag-image--none")
+					div(class="article-cover__inner")
+						div(class="article-cover__content")
+							h1(class="entry-title")
+								a(href="" rel="bookmark") #{post.title}
+							footer(class="entry-meta")
+								span(class="posted-on")
+								a(href="" title="" rel="bookmark")
+									time(class="entry-date published") #{post.date}
+									span(class="author vcard")
+										a(class="url fn n" href="") #{post.author}
 
 		main(id="main" class="site-main")
 			article(class="post type-post status-publish format-standard has-post-thumbnail hentry")
