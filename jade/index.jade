@@ -6,14 +6,30 @@ block post
 		b necesitamos usar más de una versión de node js distinta 
 		|en un mismo equipo. Ya sea porque estamos trabajando con 
 		b proyectos escritos en nuevas versiones de node
-		|, proyectos escritos en antiguas versiones de node ó tal vez porque no usamos Docker. 
+		|, proyectos escritos en antiguas versiones de node ó tal vez porque no usamos Docker (pero este es un tema para otro artículo).
 	
 	p.pre-irrelevant
-		b Para entender más esto veamos un ejemplo: 
+		b Para entender el caso planteado en este artículo, veamos un ejemplo: 
 
-	p	Digamos que actualmente estoy trabajando mis proyectos antiguos con la versión 
+	p	Digamos que actualmente estoy trabajando 
+		b mis proyectos antiguos 
+		|con la versión 
 		span(class="inline_code") 0.12.9
-		|  de node js
+		|  de 
+		b node js
+		|, pero tengo un 
+		b nuevo proyecto 
+		| en el que el cliente me pide que trabaje con la versión  
+		span(class="inline_code") 5.6.0
+		| de node js. Y como bien sabemos esta versión de Node js tiene soporte para ES6, así que ¿Por qué no ir practicando algo de ES6 en este proyecto? (claro, siempre que sea con responsabilidad). 
+
+	p	Entonces, el problema se complica más, porque necesito trabajar con estas 2 versiones distintas de node js, pero para esto existen los paquetes node js:  
+		a(href="https://www.npmjs.com/package/nvm", title="nvm - node version manager", target="_blank") nvm 
+		|  y 
+		a(href="https://www.npmjs.com/package/n", title="n - node version manager", target="_blank") n 
+		|  asfdasd
+
+
 
 	p	Por lo general, las copias se utilizan para de proponer cambios en el proyecto de otra persona u organización ó para utilizar el proyecto de otra persona como punto de partida para nuevas ideas.
 

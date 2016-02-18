@@ -18,25 +18,15 @@
     <script type="text/javascript" src="../themes/general/js/run_prettify.js"></script>
   </head>
   <body class="single single-post single-format-standard chrome header-over stagtools">
-    <div class="article-cover article-cover">
-      <div class="article-cover__background stag-image--none">
-        <div class="article-cover__inner">
-          <div class="article-cover__content">
-            <h1 class="entry-title"><a href="" rel="bookmark"></a></h1>
-            <footer class="entry-meta"><span class="posted-on"></span><a href="" title="" rel="bookmark">
-                <time class="entry-date published">17 enero, 2016</time><span class="author vcard"><a href="" class="url fn n">Jan Sanchez</a></span></a></footer>
-          </div>
-        </div>
-      </div>
-    </div>
     <main id="main" class="site-main">
       <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
         <div class="entry-content">
           <!-- begin-->
           <h2>Trabajando con múltiples versiones de node js</h2>
-          <p>	A veces <b>necesitamos usar más de una versión de node js distinta </b>en un mismo equipo. Ya sea porque estamos trabajando con <b>proyectos escritos en nuevas versiones de node</b>, proyectos escritos en antiguas versiones de node ó tal vez porque no usamos Docker. </p>
-          <p class="pre-irrelevant"><b>Para entender más esto veamos un ejemplo: </b></p>
-          <p>	Digamos que actualmente estoy trabajando mis proyectos antiguos con la versión <span class="inline_code">0.12.9</span> de node js</p>
+          <p>	A veces <b>necesitamos usar más de una versión de node js distinta </b>en un mismo equipo. Ya sea porque estamos trabajando con <b>proyectos escritos en nuevas versiones de node</b>, proyectos escritos en antiguas versiones de node ó tal vez porque no usamos Docker (pero este es un tema para otro artículo).</p>
+          <p class="pre-irrelevant"><b>Para entender el caso planteado en este artículo, veamos un ejemplo: </b></p>
+          <p>	Digamos que actualmente estoy trabajando <b>mis proyectos antiguos </b>con la versión <span class="inline_code">0.12.9</span> de <b>node js</b>, pero tengo un <b>nuevo proyecto </b>en el que el cliente me pide que trabaje con la versión  <span class="inline_code">5.6.0</span>de node js. Y como bien sabemos esta versión de Node js tiene soporte para ES6, así que ¿Por qué no ir practicando algo de ES6 en este proyecto? (claro, siempre que sea con responsabilidad). </p>
+          <p>	Entonces, el problema se complica más, porque necesito trabajar con estas 2 versiones distintas de node js, pero para esto existen los paquetes node js:  <a href="https://www.npmjs.com/package/nvm" title="nvm - node version manager" target="_blank">nvm </a> y <a href="https://www.npmjs.com/package/n" title="n - node version manager" target="_blank">n </a> asfdasd</p>
           <p>	Por lo general, las copias se utilizan para de proponer cambios en el proyecto de otra persona u organización ó para utilizar el proyecto de otra persona como punto de partida para nuevas ideas.</p>
           <h2>Haciendo fork a un repositorio</h2>
           <p>Para poner en práctica este concepto vamos a hacerle fork al repositorio de relay, relay es un Framework Javascript creado por el equipo de desarrollo de Facebook.</p>
