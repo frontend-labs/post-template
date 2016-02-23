@@ -2,7 +2,8 @@ extends ./jade/_layout.jade
 block post
 	//- aquí empieza el contenido del post
 	h2 Trabajando con múltiples versiones de Node js
-	p	A veces 
+	p
+		|A veces 
 		b necesitamos usar más de una versión de Node js  
 		|en un mismo equipo (ordenador). Ya sea porque estamos trabajando con 
 		b proyectos escritos en nuevas versiones de Node js
@@ -11,7 +12,8 @@ block post
 	p.pre-irrelevant
 		b Para entender el caso planteado en este artículo, veamos un ejemplo: 
 
-	p	Digamos que actualmente estoy trabajando 
+	p
+		|Digamos que actualmente estoy trabajando 
 		b mis proyectos antiguos 
 		|con la versión 
 		span(class="inline_code") 0.12.9
@@ -25,11 +27,14 @@ block post
 		a(href="http://frontendlabs.io/?s=es6", title="ES6 - Frontend Labs - Javascript", target="_blank") ES6
 		|, así que ¿Por qué no ir practicando algo de ES6 en este proyecto? (claro, siempre que lo hagamos de una forma muy responsable).
 
-	p	Debido a que los motivos pueden ser muchos otros, en este artículo veremos como solucionar de una manera práctica esta situación.
+	p
+		|Debido a que los motivos pueden ser muchos otros, en este artículo veremos como solucionar de una manera práctica esta situación.
 
-	h3	Entonces, ¿Cómo hago para trabajar con distintas versiones de Node js?
+	h3
+		|Entonces, ¿Cómo hago para trabajar con distintas versiones de Node js?
 
-	p	Afortunadamente para eso existen los paquetes Node js:  
+	p
+		|Afortunadamente para eso existen los paquetes Node js:  
 		a(href="https://www.npmjs.com/package/nvm", title="nvm - node version manager", target="_blank") nvm 
 		|  y 
 		a(href="https://www.npmjs.com/package/n", title="n - node version manager", target="_blank") n
@@ -43,7 +48,8 @@ block post
 		|es un paquete de Node js que se encarga de administrar las versiones de Node js, su instalación y uso es tan simple como su nombre.
 
 	h2 ¿Cómo instalar n?
-	p	Para instalar n, obviamente necesitamos tener instalado Node js. Una vez que tenemos instalado Node js, entonces simplemente 
+	p
+		|Para instalar n, obviamente necesitamos tener instalado Node js. Una vez que tenemos instalado Node js, entonces simplemente 
 		b instalamos n de forma global
 		|, con el siguiente comando:
 
@@ -51,12 +57,14 @@ block post
 		code.
 			sudo npm install -g n
 
-	p	También existen otras formas de instalarlo, por ejemplo compilandolo o mediante otros instaladores de terceros, si deseas instalarlo de diversas formas puedes revisar la 
+	p
+		|También existen otras formas de instalarlo, por ejemplo compilandolo o mediante otros instaladores de terceros, si deseas instalarlo de diversas formas puedes revisar la 
 		a(href="https://github.com/tj/n#installation", title="n - node version manager - installation", target="_blank") documentación 
 		| para esos casos.
 
 	h2 ¿Cómo uso n?
-	p	Es sencillo, una vez que instalaste n de forma global, simplemente debes comenzar a instalar las versiones de Node js con las que deseas trabajar o las versiones entre las que quieres cambiar rápidamente, por ejemplo instalaremos las versiones 
+	p
+		|Es sencillo, una vez que instalaste n de forma global, simplemente debes comenzar a instalar las versiones de Node js con las que deseas trabajar o las versiones entre las que quieres cambiar rápidamente, por ejemplo instalaremos las versiones 
 		span(class="inline_code") 0.12.9
 		|, 
 		span(class="inline_code") 4.2.6
@@ -76,7 +84,8 @@ block post
 		code.
 			sudo n 5.6.0
 
-	p	A continuación veremos el caso en el que tengo instaladas las versiones 
+	p
+		|A continuación veremos el caso en el que tengo instaladas las versiones 
 		span(class="inline_code") 4.2.6
 		| y 
 		span(class="inline_code") 5.6.0
@@ -86,7 +95,8 @@ block post
 	p
 		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/02/n.gif", alt="como instalar multiples versiones de Node js")
 
-	p	Como podemos ver, es muy sencillo instalar versiones adicionales de Node js, y también podemos ver que simplemente con escribir 
+	p
+		|Como podemos ver, es muy sencillo instalar versiones adicionales de Node js, y también podemos ver que simplemente con escribir 
 		span(class="inline_code") n
 		|  ó 
 		span(class="inline_code") sudo n
@@ -95,28 +105,31 @@ block post
 	p
 		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/02/n-versions.gif", alt="como cambiar multiples versiones de Node js")
 
+	h2
+		|¿Cómo desinstalo versiones de Node js con n?
 
-	h2	¿Cómo desinstalo versiones de Node js con n?
-
-	p	Desinstalar versiones de Node js con n es muy simple. Por ejemplo el comando para desinstalar la versión 0.12.9 de Node js sería el siguiente:
+	p
+		|Desinstalar versiones de Node js con n es muy simple. Por ejemplo el comando para desinstalar la versión 0.12.9 de Node js sería el siguiente:
 
 	pre(class="prettyprint lang-sh")
 		code.
 			sudo n rm 0.12.9 
 
-	p	En el siguiente video podemos ver como desintalar la versión 
+	p
+		|En el siguiente video podemos ver como desintalar la versión 
 		span(class="inline_code") 0.12.9
 		|  de Node js.
 
 	p
 		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/02/n-remove-versions.gif", alt="como desinstalar multiples versiones de Node js")
 
-
-	p	Espero que este artículo les sirva para poder instalar múltiples versiones de Node js en un mismo Sistema Operativo y administrar estas versiones rápidamente con el paquete n. 
+	p
+		|Espero que este artículo les sirva para poder instalar múltiples versiones de Node js en un mismo Sistema Operativo y administrar estas versiones rápidamente con el paquete n. 
 
 
 	h2 Referencias bibliográficas
-	p	NPM. 
+	p
+		|NPM. 
 		i Interactively Manage All Your Node Versions. 
 		| [En línea] [Fecha de consulta: 18 de Febrero del 2016]. 
 		br
