@@ -1,50 +1,14 @@
 extends ./jade/_layout.jade
 block post
 	//- aquí empieza el contenido del post
-	h2 ¿Cómo habilitar/deshabilitar un botón ó cualquier elemento de un formulario con jQuery?
+	h2 Trabajando con múltiples versiones de Node js
 	p
-		|Hay ocasiones en las que necesitamos habilitar o deshabilitar una caja de texto, un botón ó cualquier otro elemento de un formulario html con jQuery.
-	p
-		|Para llevar esto a cabo usaremos el método jQuery llamado 
-		span(class="inline_code") .prop()
-
-	h2 .prop( nombreDeUnaPropiedad, valor )
-	p
-		|Este método obtiene el valor de una propiedad en un elemento html, y desde luego también nos permite establecer un valor para una propiedad.
-
-	p.pre-irrelevant
-		b Parámetro:
-		|  nombreDeUnaPropiedad
-		br 
-		b Tipo: 
-		|  String
-		br 
-		b Descripción: 
-		|  Este parámetro sirve para especificar un nombre de una propiedad.
-
-	p.pre-irrelevant
-		b Parámetro:
-		|  valor
-		br 
-		b Tipo: 
-		|  Cualquiera
-		br 
-		b Descripción: 
-		|  Este parámetro sirve para especificar un valor para la propiedad, aquí también podemos usar una función, siempre y cuando retorne un valor.
-
-	p.pre-irrelevant
-		b Parámetro:
-		|  propiedadesMultiples
-		br 
-		b Tipo: 
-		|  Objeto
-		br 
-		b Descripción: 
-		|  Este parámetro sirve para especificar pares propiedad-valor para una ó más propiedades, mediante un objeto javascript.
-
-http://api.jquery.com/prop/
-https://learn.jquery.com/using-jquery-core/faq/how-do-i-disable-enable-a-form-element/
-
+		|A veces 
+		b necesitamos usar más de una versión de Node js  
+		|en un mismo equipo (ordenador). Ya sea porque estamos trabajando con 
+		b proyectos escritos en nuevas versiones de Node js
+		|, proyectos escritos en antiguas versiones de Node js ó tal vez porque no usamos Docker (pero este es un tema para otro artículo).
+	
 	p.pre-irrelevant
 		b Para entender el caso planteado en este artículo, veamos un ejemplo: 
 

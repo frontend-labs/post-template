@@ -22,7 +22,7 @@
       <div class="article-cover__background stag-image--none">
         <div class="article-cover__inner">
           <div class="article-cover__content">
-            <h1 class="entry-title"><a href="" rel="bookmark">Actualizar repositorio forked a partir de las actualizaciones del repositorio original</a></h1>
+            <h1 class="entry-title"><a href="" rel="bookmark"></a></h1>
             <footer class="entry-meta"><span class="posted-on"></span><a href="" title="" rel="bookmark">
                 <time class="entry-date published">17 enero, 2016</time><span class="author vcard"><a href="" class="url fn n">Jan Sanchez</a></span></a></footer>
           </div>
@@ -33,55 +33,41 @@
       <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
         <div class="entry-content">
           <!-- begin-->
-          <h2>¿Qué significa hacerle Fork a un repositorio?</h2>
-          <p>	Hacerle fork a un repositorio significa <b>copiarlo</b>. Copiar un repositorio nos permite experimentar libremente sin afectar al proyecto original, obviamente porque <b>nuestro fork es una copia</b>, que se encontrará en nuestra cuenta de github, bitbucket o algún otro servicio de alojamiento de repositorios.</p>
-          <p>	Por lo general, las copias se utilizan para de proponer cambios en el proyecto de otra persona u organización ó para utilizar el proyecto de otra persona como punto de partida para nuevas ideas.</p>
-          <h2>Haciendo fork a un repositorio</h2>
-          <p>Para poner en práctica este concepto vamos a hacerle fork al repositorio de relay, relay es un Framework Javascript creado por el equipo de desarrollo de Facebook.</p>
-          <p>	Para llevar a cabo esto, primero necesitamos loguearnos en nuestra cuenta de <a href="https://github.com/login?return_to=https://github.com/facebook/relay" target="_blank" title="login en github">github</a>, si no tienes una cuenta de github, entonces antes debes <a href="https://github.com/join?source=frontendlabs.io" target="_blank" title="crear cuenta de github">crearla</a>.</p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/fork-repository.png" alt="fork github repository" class="aligncenter"></p>
-          <p class="pre-irrelevant">	Una vez logueados, <b>haremos un fork de este repositorio</b>. Para esto nos dirigimos al repositorio de <a href="https://github.com/facebook/relay" target="_blank" title="relay - facebook">relay</a>.
-            En la página principal de este repositorio veremos que en la parte superior derecha hay un botón con la opción <b>Fork</b>. Lo presionamos y con esto empezaremos a realizar un Fork de ese repositorio <b>hacia nuestra cuenta de Github</b>. 
-          </p>
-          <p class="irrelevant">	En algunos casos en los que tengamos una cuenta personal asociada a alguna organización, Github nos pedirá que especifiquemos si el Fork se hará sobre nuestra cuenta personal o en alguna de nuestras cuentas de organización.</p>
-          <p>Una vez que este proceso haya terminado, habremos copiado ese repositorio a nuestra cuenta, así que luego de esto veremos un encabezado parecido al siguiente:</p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/forked.png" alt="forked repository" class="aligncenter"></p>
-          <p>	Como podemos ver Github nos indica que ahora tenemos en nuestra cuenta un nuevo repositorio llamado <b>relay </b>y vemos que debajo dice <b>'forked from facebook/relay' </b>(copiado desde facebook/relay).</p>
-          <h2>	Trabajando con un repositorio Forked</h2>
-          <p>	Por lo general, cuando se hace Fork de un repositorio se realizan modificaciones sobre este repositorio para manipular la versión original sin causar problemas, es como tener nuestro propio 'patio de juegos' para poder hacer lo que deseemos con el proyecto.</p>
-          <p>Pero a veces <b>queremos hacer mejoras sobre ese proyecto </b>y enviar nuestras mejoras al dueño original para que las implemente ó <b>simplemente queremos seguir teniendo las actualizaciones del proyecto principal</b>.</p>
-          <p>Esta vez nos enfocaremos en seguir teniendo las actualizaciones del proyecto principal, realizando los siguientes pasos:</p>
-          <h2>Clonando nuestro repositorio Forked</h2>
-          <p>Con la siguiente instrucción clonaremos nuestro nuevo repositorio Forked, y <b>nombraremos </b><span class="inline_folder">relay_forked</span> a la carpeta que almacenará nuestro proyecto:</p>
-          <pre class="prettyprint lang-sh"><code>git clone https://github.com/jansanchez/relay.git relay_forked
+          <h2>Trabajando con múltiples versiones de Node js</h2>
+          <p>A veces <b>necesitamos usar más de una versión de Node js  </b>en un mismo equipo (ordenador). Ya sea porque estamos trabajando con <b>proyectos escritos en nuevas versiones de Node js</b>, proyectos escritos en antiguas versiones de Node js ó tal vez porque no usamos Docker (pero este es un tema para otro artículo).</p>
+          <p class="pre-irrelevant"><b>Para entender el caso planteado en este artículo, veamos un ejemplo: </b></p>
+          <p>Digamos que actualmente estoy trabajando <b>mis proyectos antiguos </b>con la versión <span class="inline_code">0.12.9</span> de <b>Node js</b>, pero tengo un <b>proyecto nuevo  </b>en el cual el cliente me pide que trabaje con la versión  <span class="inline_code">5.6.0</span> de Node js. Y como bien sabemos esta versión de Node js tiene un amplio soporte para características de <a href="http://frontendlabs.io/?s=es6" title="ES6 - Frontend Labs - Javascript" target="_blank">ES6</a>, así que ¿Por qué no ir practicando algo de ES6 en este proyecto? (claro, siempre que lo hagamos de una forma muy responsable).</p>
+          <p>Debido a que los motivos pueden ser muchos otros, en este artículo veremos como solucionar de una manera práctica esta situación.</p>
+          <h3>Entonces, ¿Cómo hago para trabajar con distintas versiones de Node js?</h3>
+          <p>Afortunadamente para eso existen los paquetes Node js:  <a href="https://www.npmjs.com/package/nvm" title="nvm - node version manager" target="_blank">nvm </a> y <a href="https://www.npmjs.com/package/n" title="n - node version manager" target="_blank">n</a>, que seguramente no son la únicas opciones, pero por esta vez y debido a su simplicidad nos enfocaremos sólo en el paquete <b>n</b>.</p>
+          <h2>¿Qué es n?</h2>
+          <p><b>n </b>es un paquete de Node js que se encarga de administrar las versiones de Node js, su instalación y uso es tan simple como su nombre.</p>
+          <h2>¿Cómo instalar n?</h2>
+          <p>Para instalar n, obviamente necesitamos tener <a href="http://frontendlabs.io/232--como-instalar-node-js-debian-linux" title="como instalar node js en linux" target="_blank">instalado Node js</a>. Una vez que tenemos instalado Node js, entonces simplemente <b>instalamos n de forma global</b>, con el siguiente comando:</p>
+          <pre class="prettyprint lang-sh"><code>sudo npm install -g n
 </code></pre>
-          <p>	Una vez que terminamos de clonar nuestro nuevo repositorio, ingresamos a la carpeta <span class="inline_folder">relay_forked</span></p>
-          <pre class="prettyprint lang-sh"><code>cd relay_forked
+          <p>También existen otras formas de instalarlo, por ejemplo compilandolo o mediante otros instaladores de terceros, si deseas instalarlo de diversas formas puedes revisar la <a href="https://github.com/tj/n#installation" title="n - node version manager - installation" target="_blank">documentación </a>para esos casos.</p>
+          <h2>¿Cómo uso n?</h2>
+          <p>Es sencillo, una vez que instalaste n de forma global, simplemente debes comenzar a instalar las versiones de Node js con las que deseas trabajar o las versiones entre las que quieres cambiar rápidamente, por ejemplo instalaremos las versiones <span class="inline_code">0.12.9</span>, <span class="inline_code">4.2.6</span>, <span class="inline_code">5.6.0</span>respectivamente con los siguientes comandos:</p>
+          <pre class="prettyprint lang-sh"><code>sudo n 0.12.9
 </code></pre>
-          <p>	Y luego debemos indicarle a <a href="http://frontendlabs.io/?s=git" title="git" target="_blank">git </a>que nuestro repositorio tiene una <b>ubicación remota</b>, en nuestro caso la url de la ubicación remota es: <a href="https://github.com/facebook/relay" title="relay - facebook" target="_blank">https://github.com/facebook/relay.git</a>, y la agregamos a nuestro repositorio local escribiendo el siguiente comando:</p>
-          <pre class="prettyprint lang-sh"><code>git remote add upstream https://github.com/facebook/relay.git
+          <pre class="prettyprint lang-sh"><code>sudo n 4.2.6
 </code></pre>
-          <p>Con esto le estamos indicando a git que agregue la <b>ubicación remota </b>llamada <b>upstream</b>. Upstream es un término en inglés que se puede interpretar como "principal" o "producción", pero si deseamos le podemos cambiar de nombre, ya que el nombre upstream sólo se usa por estándar y no es obligatorio.</p>
-          <p>Luego de esto, ya estamos listos para poder actualizar nuestro repositorio desde la url remota principal, escribiendo el siguiente comando:</p>
-          <pre class="prettyprint lang-sh"><code>git fetch upstream
+          <pre class="prettyprint lang-sh"><code>sudo n 5.6.0
 </code></pre>
-          <p>De esta forma obtenemos todas las ramas actualizadas desde esa ubicación remota. Pero aún no tendremos los cambios en nuestra rama <b>master </b>o la rama que estemos usando. </p>
-          <p>	Para lograr eso tenemos que hacer un <b>merge </b>o <b>rebase </b>para poder fusionar los nuevos cambios del proyecto principal con nuestra copia. </p>
-          <p>	Digamos que estamos trabajando en la rama master, entonces debemos asegurarnos que estamos en la rama master, caso contrario ingresamos a nuestra rama master, así:</p>
-          <pre class="prettyprint lang-sh"><code>git checkout master
+          <p>A continuación veremos el caso en el que tengo instaladas las versiones <span class="inline_code">4.2.6</span>y <span class="inline_code">5.6.0</span> e instalo la versión <span class="inline_code">0.12.9</span></p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/n.gif" alt="como instalar multiples versiones de Node js" class="aligncenter"></p>
+          <p>Como podemos ver, es muy sencillo instalar versiones adicionales de Node js, y también podemos ver que simplemente con escribir <span class="inline_code">n</span> ó <span class="inline_code">sudo n</span>, dependiendo de cómo tengamos configurado nuestro sistema operativo, podremos elegir con que versión de Node js trabajaremos y podremos cambiar de versión cada vez que así lo deseemos, como se puede apreciar en el siguiente video:</p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/n-versions.gif" alt="como cambiar multiples versiones de Node js" class="aligncenter"></p>
+          <h2>¿Cómo desinstalo versiones de Node js con n?</h2>
+          <p>Desinstalar versiones de Node js con n es muy simple. Por ejemplo el comando para desinstalar la versión 0.12.9 de Node js sería el siguiente:</p>
+          <pre class="prettyprint lang-sh"><code>sudo n rm 0.12.9 
 </code></pre>
-          <p>	Y ahora que nos encontramos en nuestra rama master, fusionamos los cambios del <b>proyecto principal  </b> con <b>nuestro proyecto </b>con el siguiente comando: </p>
-          <pre class="prettyprint lang-sh"><code>git merge upstream/master
-</code></pre>
-          <p>	En cambio si usas <b>rebase </b>, entonces la instrucción que debes realizar es la siguiente:</p>
-          <pre class="prettyprint lang-sh"><code>git rebase upstream/master
-</code></pre>
-          <p>	De esta manera hemos aprendido cómo comenzar a trabajar con proyectos Forked en Github, espero que les haya servido de algo este pequeño artículo.</p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/fork-github-repository.png" alt="fork-github-repository" class="aligncenter"></p>
-          <h2>Referencias bibliográficas</h2>
-          <p>	GITHUB HELP. <i>Fork A Repo. </i>[En línea] [Fecha de consulta: 12 de Febrero del 2016]. <br>Disponible en: <a href="https://help.github.com/articles/fork-a-repo/" target="_blank" title="fork a repo - github">fork a repo - github</a>.</p>
-          <p>	GITHUB HELP. <i>Syncing a fork. </i>[En línea] [Fecha de consulta: 12 de Febrero del 2016]. <br>Disponible en: <a href="https://help.github.com/articles/syncing-a-fork/" target="_blank" title="syncing a fork - github">syncing a fork - github</a>.</p>
-          <p>	GITHUB GUIDES. <i>Forking Projects. </i>[En línea] [Fecha de publicación: 23 de Enero del 2014] [Fecha de consulta: 12 de Febrero del 2016]. <br>Disponible en: <a href="https://guides.github.com/activities/forking/" target="_blank" title="Forking Projects - github">Forking Projects - github</a>.</p>
+          <p>En el siguiente video podemos ver cómo desintalar la versión <span class="inline_code">0.12.9</span> de Node js.</p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/n-remove-versions.gif" alt="como desinstalar multiples versiones de Node js" class="aligncenter"></p>
+          <p>Espero que este artículo les sirva para poder instalar múltiples versiones de Node js en un mismo Sistema Operativo y administrar estas versiones rápidamente con el paquete n. </p>
+          <h2>Fuentes</h2>
+          <p>NPM. <i>Interactively Manage All Your Node Versions. </i>[En línea] [Fecha de consulta: 18 de Febrero del 2016]. <br>Disponible en: <a href="https://www.npmjs.com/package/n" target="_blank" title="n - node version manager">https://www.npmjs.com/package/n</a>.</p>
           <!-- end-->
         </div>
       </article>

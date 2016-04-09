@@ -18,45 +18,29 @@
     <script type="text/javascript" src="../themes/general/js/run_prettify.js"></script>
   </head>
   <body class="single single-post single-format-standard chrome header-over stagtools">
+    <div class="article-cover article-cover">
+      <div class="article-cover__background stag-image--none">
+        <div class="article-cover__inner">
+          <div class="article-cover__content">
+            <h1 class="entry-title"><a href="" rel="bookmark"></a></h1>
+            <footer class="entry-meta"><span class="posted-on"></span><a href="" title="" rel="bookmark">
+                <time class="entry-date published">17 enero, 2016</time><span class="author vcard"><a href="" class="url fn n">Jan Sanchez</a></span></a></footer>
+          </div>
+        </div>
+      </div>
+    </div>
     <main id="main" class="site-main">
       <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
         <div class="entry-content">
           <!-- begin-->
-          <h2>Trabajando con múltiples versiones de Node js</h2>
-          <p>A veces <b>necesitamos usar más de una versión de Node js  </b>en un mismo equipo (ordenador). Ya sea porque estamos trabajando con <b>proyectos escritos en nuevas versiones de Node js</b>, proyectos escritos en antiguas versiones de Node js ó tal vez porque no usamos Docker (pero este es un tema para otro artículo).</p>
-          <p class="pre-irrelevant"><b>Para entender el caso planteado en este artículo, veamos un ejemplo: </b></p>
-          <p>Digamos que actualmente estoy trabajando <b>mis proyectos antiguos </b>con la versión <span class="inline_code">0.12.9</span> de <b>Node js</b>, pero tengo un <b>proyecto nuevo  </b>en el cual el cliente me pide que trabaje con la versión  <span class="inline_code">5.6.0</span> de Node js. Y como bien sabemos esta versión de Node js tiene un amplio soporte para características de <a href="http://frontendlabs.io/?s=es6" title="ES6 - Frontend Labs - Javascript" target="_blank">ES6</a>, así que ¿Por qué no ir practicando algo de ES6 en este proyecto? (claro, siempre que lo hagamos de una forma muy responsable).</p>
-          <p>Debido a que los motivos pueden ser muchos otros, en este artículo veremos como solucionar de una manera práctica esta situación.</p>
-          <h3>Entonces, ¿Cómo hago para trabajar con distintas versiones de Node js?</h3>
-          <p>Afortunadamente para eso existen los paquetes Node js:  <a href="https://www.npmjs.com/package/nvm" title="nvm - node version manager" target="_blank">nvm </a> y <a href="https://www.npmjs.com/package/n" title="n - node version manager" target="_blank">n</a>, que seguramente no son la únicas opciones, pero por esta vez y debido a su simplicidad nos enfocaremos sólo en el paquete <b>n</b>.</p>
-          <h2>¿Qué es n?</h2>
-          <p><b>n </b>es un paquete de Node js que se encarga de administrar las versiones de Node js, su instalación y uso es tan simple como su nombre.</p>
-          <h2>¿Cómo instalar n?</h2>
-          <p>Para instalar n, obviamente necesitamos tener <a href="http://frontendlabs.io/232--como-instalar-node-js-debian-linux" title="como instalar node js en linux" target="_blank">instalado Node js</a>. Una vez que tenemos instalado Node js, entonces simplemente <b>instalamos n de forma global</b>, con el siguiente comando:</p>
-          <pre class="prettyprint lang-sh"><code>sudo npm install -g n
-</code></pre>
-          <p>También existen otras formas de instalarlo, por ejemplo compilandolo o mediante otros instaladores de terceros, si deseas instalarlo de diversas formas puedes revisar la <a href="https://github.com/tj/n#installation" title="n - node version manager - installation" target="_blank">documentación </a>para esos casos.</p>
-          <h2>¿Cómo uso n?</h2>
-          <p>Es sencillo, una vez que instalaste n de forma global, simplemente debes comenzar a instalar las versiones de Node js con las que deseas trabajar o las versiones entre las que quieres cambiar rápidamente, por ejemplo instalaremos las versiones <span class="inline_code">0.12.9</span>, <span class="inline_code">4.2.6</span>, <span class="inline_code">5.6.0</span>respectivamente con los siguientes comandos:</p>
-          <pre class="prettyprint lang-sh"><code>sudo n 0.12.9
-</code></pre>
-          <pre class="prettyprint lang-sh"><code>sudo n 4.2.6
-</code></pre>
-          <pre class="prettyprint lang-sh"><code>sudo n 5.6.0
-</code></pre>
-          <p>A continuación veremos el caso en el que tengo instaladas las versiones <span class="inline_code">4.2.6</span>y <span class="inline_code">5.6.0</span> e instalo la versión <span class="inline_code">0.12.9</span></p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/n.gif" alt="como instalar multiples versiones de Node js" class="aligncenter"></p>
-          <p>Como podemos ver, es muy sencillo instalar versiones adicionales de Node js, y también podemos ver que simplemente con escribir <span class="inline_code">n</span> ó <span class="inline_code">sudo n</span>, dependiendo de cómo tengamos configurado nuestro sistema operativo, podremos elegir con que versión de Node js trabajaremos y podremos cambiar de versión cada vez que así lo deseemos, como se puede apreciar en el siguiente video:</p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/n-versions.gif" alt="como cambiar multiples versiones de Node js" class="aligncenter"></p>
-          <h2>¿Cómo desinstalo versiones de Node js con n?</h2>
-          <p>Desinstalar versiones de Node js con n es muy simple. Por ejemplo el comando para desinstalar la versión 0.12.9 de Node js sería el siguiente:</p>
-          <pre class="prettyprint lang-sh"><code>sudo n rm 0.12.9 
-</code></pre>
-          <p>En el siguiente video podemos ver cómo desintalar la versión <span class="inline_code">0.12.9</span> de Node js.</p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/02/n-remove-versions.gif" alt="como desinstalar multiples versiones de Node js" class="aligncenter"></p>
-          <p>Espero que este artículo les sirva para poder instalar múltiples versiones de Node js en un mismo Sistema Operativo y administrar estas versiones rápidamente con el paquete n. </p>
-          <h2>Fuentes</h2>
-          <p>NPM. <i>Interactively Manage All Your Node Versions. </i>[En línea] [Fecha de consulta: 18 de Febrero del 2016]. <br>Disponible en: <a href="https://www.npmjs.com/package/n" target="_blank" title="n - node version manager">https://www.npmjs.com/package/n</a>.</p>
+          <h2>¿Cómo habilitar/deshabilitar un botón ó cualquier elemento de un formulario con jQuery?</h2>
+          <p>Hay ocasiones en las que necesitamos habilitar o deshabilitar una caja de texto, un botón ó cualquier otro elemento de un formulario html con jQuery.</p>
+          <p>Para llevar esto a cabo usaremos el método jQuery llamado <span class="inline_code">.prop()</span></p>
+          <h2>.prop( nombreDeUnaPropiedad, valor )</h2>
+          <p>Este método obtiene el valor de una propiedad en un elemento html, y desde luego también nos permite establecer un valor para una propiedad.</p>
+          <p class="pre-irrelevant"><b>Parámetro:</b> nombreDeUnaPropiedad<br><b>Tipo: </b> String<br><b>Descripción: </b> Este parámetro sirve para especificar un nombre de una propiedad.</p>
+          <p class="pre-irrelevant"><b>Parámetro:</b> valor<br><b>Tipo: </b> Cualquiera<br><b>Descripción: </b> Este parámetro sirve para especificar un valor para la propiedad, aquí también podemos usar una función, siempre y cuando retorne un valor.</p>
+          <p class="pre-irrelevant"><b>Parámetro:</b> propiedadesMultiples<br><b>Tipo: </b> Objeto<br><b>Descripción: </b> Este parámetro sirve para especificar pares propiedad-valor para una ó más propiedades, mediante un objeto javascript.</p>
           <!-- end-->
         </div>
       </article>

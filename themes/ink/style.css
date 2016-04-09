@@ -3555,3 +3555,8 @@ p.irrelevant {
 	}
 }
 
+
+.banners{
+	display: block;
+	margin: 8px auto 40px auto;
+}
