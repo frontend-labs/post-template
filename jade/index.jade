@@ -1,176 +1,167 @@
 extends ./jade/_layout.jade
 block post
 	//- aquí empieza el contenido del post
-	h2 ¿Cómo habilitar/deshabilitar un botón ó cualquier elemento de un formulario con jQuery?
-	p
-		|Hay ocasiones en las que necesitamos habilitar o deshabilitar una caja de texto, un botón ó cualquier otro elemento de un formulario html con jQuery.
-	p
-		|Para llevar esto a cabo usaremos el método jQuery llamado 
-		span(class="inline_code") .prop()
+	h2 ¿Cómo instalar MongoDB Community Edition en Linux Ubuntu? 
+	p.pre-irrelevant
+		|A partir de la versión 3.0, MongoDB se puede instalar de una forma más fácil en Linux
+		|Ubuntu ó Elementary OS.
+		|En este artículo veremos cómo instalar MongoDB para Ubuntu 12.04 LTS (Precise Pangolin) y 14.04 LTS (Trusty Tahr).
+	p.pre-irrelevant
+		|Es muy probable que este tipo de instalación también funcione correctamente para las nuevas versiones de Ubuntu.
 
-	h2 .prop( nombreDeUnaPropiedad, valor )
+	h2 Importando la clave pública usada por el sistema gestionador de paquetes de Ubuntu
+	p.pre-irrelevant
+		|Las herramientas de gestión de paquetes de Ubuntu (es decir, dpkg y apt) garantizan la coherencia y
+		|la autenticidad del paquete, al exigir que los distribuidores firmen los paquetes con claves GPG.
+		|Ejecuta el siguiente comando para importar la clave pública GPG de MongoDB:
+
+	pre(class="prettyprint lang-sh")
+		code.
+			sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+	br
+	h2 Creando un archivo tipo lista para MongoDB 
+	p.pre-irrelevant
+		|En este archivo se encontrará la lista de repositorios desde el cual se instalará mongoDB.
+	h2 Si estoy usando Elementary OS, ¿Cómo se qué versión de Ubuntu estoy usando?
+	p.pre-irrelevant
+		|Simplemente ejecutando el siguiente comando:
+
+	pre(class="prettyprint lang-sh")
+		code.
+			lsb_release -a -u | grep "Description"
+	p.pre-irrelevant
+		|Este comando nos dará un resultado parecido al siguiente:
+	pre(class="prettyprint lang-sh")
+		code.
+			Description:	Ubuntu 14.04 LTS
+	br
+
 	p
-		|Este método obtiene el valor de una propiedad en un elemento html, y desde luego también nos permite establecer un valor para una propiedad.
+		|Creamos el archivo tipo lista 
+		b /etc/apt/sources.list.d/mongodb-org-3.2.list
+		|, usando el comando
+		|apropiado para la versión de ubuntu que estés usando:
+
+	h3 Ubuntu 12.04
+	pre(class="prettyprint lang-sh")
+		code.
+			echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	h3 Ubuntu 14.04
+	pre(class="prettyprint lang-sh")
+		code.
+			echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list"
+	br
+
+	h2 Actualizamos la base de datos local de paquetes de nuestro SO
+	pre(class="prettyprint lang-sh")
+		code.
+			sudo apt-get update
+	br
+
+	h2 Instalando los paquetes de MongoDB
+	p.pre-irrelevant
+		|Podemos instalar la última versión estable de MongoDB o una versión específica de MongoDB.
+	h3 Instalando la última versión estable de MongoDB
+	pre(class="prettyprint lang-sh")
+		code.
+			sudo apt-get install -y mongodb-org
+	br
+
+	h3 Instalando una versión específica de MongoDB
+	p.pre-irrelevant
+		|Para instalar una versión específica, debe especificar cada componente de forma individual junto con
+		|su número de versión, como en el siguiente ejemplo:
+	pre(class="prettyprint lang-sh")
+		code.
+			sudo apt-get install -y mongodb-org=3.2.5 mongodb-org-server=3.2.5 mongodb-org-shell=3.2.5
+			mongodb-org-mongos=3.2.5 mongodb-org-tools=3.2.5
+	br
 
 	p.pre-irrelevant
-		b Parámetro:
-		|  nombreDeUnaPropiedad
-		br 
-		b Tipo: 
-		|  String
-		br 
-		b Descripción: 
-		|  Este parámetro sirve para especificar un nombre de una propiedad.
+		|Si sólo se instala mongodb-org = 3.2.5, y no se incluyen los demás componentes, se instalará la
+		|última versión de cada componente de MongoDB, independientemente de la versión que ha especificado.
+
+
+	h3 Comprobando la instalación de MongoDB
+	p.pre-irrelevant
+		|Para comprobar si la instalación de MongoDB a sido exitosa simplemente escribimos en la terminal el
+		|siguiente comando:
+
+	pre(class="prettyprint lang-sh")
+		code.
+			mongo --version
 
 	p.pre-irrelevant
-		b Parámetro:
-		|  valor
-		br 
-		b Tipo: 
-		|  Cualquiera
-		br 
-		b Descripción: 
-		|  Este parámetro sirve para especificar un valor para la propiedad, aquí también podemos usar una función, siempre y cuando retorne un valor.
+		|Si nos indica un número de versión, por ejemplo 
+		b  MongoDB shell version: 3.2.5
+		|, quiere decir que tenemos instalada correctamente la versión 3.2.5 de MongoDB.
 
+	h2 Ejecutando/Corriendo MongoDB
 	p.pre-irrelevant
-		b Parámetro:
-		|  propiedadesMultiples
-		br 
-		b Tipo: 
-		|  Objeto
-		br 
-		b Descripción: 
-		|  Este parámetro sirve para especificar pares propiedad-valor para una ó más propiedades, mediante un objeto javascript.
-
-http://api.jquery.com/prop/
-https://learn.jquery.com/using-jquery-core/faq/how-do-i-disable-enable-a-form-element/
-
-	p.pre-irrelevant
-		b Para entender el caso planteado en este artículo, veamos un ejemplo: 
-
-	p
-		|Digamos que actualmente estoy trabajando 
-		b mis proyectos antiguos 
-		|con la versión 
-		span(class="inline_code") 0.12.9
-		|  de 
-		b Node js
-		|, pero tengo un 
-		b proyecto nuevo  
-		| en el cual el cliente me pide que trabaje con la versión  
-		span(class="inline_code") 5.6.0
-		|  de Node js. Y como bien sabemos esta versión de Node js tiene un amplio soporte para características de 
-		a(href="http://frontendlabs.io/?s=es6", title="ES6 - Frontend Labs - Javascript", target="_blank") ES6
-		|, así que ¿Por qué no ir practicando algo de ES6 en este proyecto? (claro, siempre que lo hagamos de una forma muy responsable).
-
-	p
-		|Debido a que los motivos pueden ser muchos otros, en este artículo veremos como solucionar de una manera práctica esta situación.
-
-	h3
-		|Entonces, ¿Cómo hago para trabajar con distintas versiones de Node js?
-
-	p
-		|Afortunadamente para eso existen los paquetes Node js:  
-		a(href="https://www.npmjs.com/package/nvm", title="nvm - node version manager", target="_blank") nvm 
-		|  y 
-		a(href="https://www.npmjs.com/package/n", title="n - node version manager", target="_blank") n
-		| , que seguramente no son la únicas opciones, pero por esta vez y debido a su simplicidad nos enfocaremos sólo en el paquete 
-		b n
+		|La instancia de MongoDB almacena sus archivos de datos en 
+		b /var/lib/mongodb 
+		|y su registro de logs en 
+		b /var/log/mongodb 
+		|por defecto, y se ejecuta utilizando la cuenta de usuario mongodb. Puede especificar directorios de
+		|registro de logs y archivo de datos alternos en 
+		b /etc/mongod.conf
 		|.
 
-	h2 ¿Qué es n?
-	p
-		b n 
-		|es un paquete de Node js que se encarga de administrar las versiones de Node js, su instalación y uso es tan simple como su nombre.
-
-	h2 ¿Cómo instalar n?
-	p
-		|Para instalar n, obviamente necesitamos tener 
-		a(href="http://frontendlabs.io/232--como-instalar-node-js-debian-linux", title="como instalar node js en linux", target="_blank") instalado Node js
-		|. Una vez que tenemos instalado Node js, entonces simplemente 
-		b instalamos n de forma global
-		|, con el siguiente comando:
+	h3 Iniciando MongoDB
+	p.pre-irrelevant
+		|Ejecutamos el siguiente comando para iniciar MongoDB:
 
 	pre(class="prettyprint lang-sh")
 		code.
-			sudo npm install -g n
-
-	p
-		|También existen otras formas de instalarlo, por ejemplo compilandolo o mediante otros instaladores de terceros, si deseas instalarlo de diversas formas puedes revisar la 
-		a(href="https://github.com/tj/n#installation", title="n - node version manager - installation", target="_blank") documentación 
-		| para esos casos.
-
-	h2 ¿Cómo uso n?
-	p
-		|Es sencillo, una vez que instalaste n de forma global, simplemente debes comenzar a instalar las versiones de Node js con las que deseas trabajar o las versiones entre las que quieres cambiar rápidamente, por ejemplo instalaremos las versiones 
-		span(class="inline_code") 0.12.9
-		|, 
-		span(class="inline_code") 4.2.6
-		|, 
-		span(class="inline_code") 5.6.0
-		| respectivamente con los siguientes comandos:
+			sudo service mongod start
+	br
+	h3 Comprobando que MongoDB ha iniciado correctamente 
+	p.pre-irrelevant
+		|Compruebe que el proceso 
+		b mongod 
+		|ha iniciado correctamente comprobando el contenido del archivo de registro en 
+		b /var/log/mongodb/mongod.log 
+		|con el siguiente comando:
 
 	pre(class="prettyprint lang-sh")
 		code.
-			sudo n 0.12.9
+			cat /var/log/mongodb/mongod.log
 
+	p.pre-irrelevant
+		|Al ejecutar este comando podremos ver el log actual de MongoDB.
+
+	h3 Deteniendo el servicio de MongoDB
+	p.pre-irrelevant
+		|Para detener el servicio de MongoDB simplemente tenemos que escribir el siguiente comando:
 	pre(class="prettyprint lang-sh")
 		code.
-			sudo n 4.2.6
-
+			sudo service mongod stop
+	br
+	h3 Reiniciando el servicio de MongoDB
+	p.pre-irrelevant
+		|Para reiniciar el servicio de MongoDB simplemente tenemos que escribir el siguiente comando:
 	pre(class="prettyprint lang-sh")
 		code.
-			sudo n 5.6.0
+			sudo service mongod restart
+	br
 
 	p
-		|A continuación veremos el caso en el que tengo instaladas las versiones 
-		span(class="inline_code") 4.2.6
-		| y 
-		span(class="inline_code") 5.6.0
-		|  e instalo la versión 
-		span(class="inline_code") 0.12.9
+		|Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
+		|duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
+		|olviden de compartir el artículo.
+	p
+		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/04/mongodb-logo-gray.png", alt="como instalar mongodb en linux ubuntu")
 
 	p
-		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/02/n.gif", alt="como instalar multiples versiones de Node js")
-
-	p
-		|Como podemos ver, es muy sencillo instalar versiones adicionales de Node js, y también podemos ver que simplemente con escribir 
-		span(class="inline_code") n
-		|  ó 
-		span(class="inline_code") sudo n
-		| , dependiendo de cómo tengamos configurado nuestro sistema operativo, podremos elegir con que versión de Node js trabajaremos y podremos cambiar de versión cada vez que así lo deseemos, como se puede apreciar en el siguiente video:
-
-	p
-		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/02/n-versions.gif", alt="como cambiar multiples versiones de Node js")
-
-	h2
-		|¿Cómo desinstalo versiones de Node js con n?
-
-	p
-		|Desinstalar versiones de Node js con n es muy simple. Por ejemplo el comando para desinstalar la versión 0.12.9 de Node js sería el siguiente:
-
-	pre(class="prettyprint lang-sh")
-		code.
-			sudo n rm 0.12.9 
-
-	p
-		|En el siguiente video podemos ver cómo desintalar la versión 
-		span(class="inline_code") 0.12.9
-		|  de Node js.
-
-	p
-		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/02/n-remove-versions.gif", alt="como desinstalar multiples versiones de Node js")
-
-	p
-		|Espero que este artículo les sirva para poder instalar múltiples versiones de Node js en un mismo Sistema Operativo y administrar estas versiones rápidamente con el paquete n. 
 
 
 	h2 Fuentes
 	p
-		|NPM. 
-		i Interactively Manage All Your Node Versions. 
-		| [En línea] [Fecha de consulta: 18 de Febrero del 2016]. 
+		|MongoDB, Inc. 
+		i Install MongoDB Community Edition on Ubuntu.
+		|  [En línea] [Fecha de consulta: 19 de Abril del 2016]. 
 		br
 		|Disponible en: 
-		a(href="https://www.npmjs.com/package/n", target="_blank", title="n - node version manager") https://www.npmjs.com/package/n
+		a(href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/", target="_blank",
+		title="Install MongoDB Community Edition on Ubuntu") https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 		|.
