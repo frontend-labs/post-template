@@ -1,7 +1,7 @@
 extends ./jade/_layout.jade
 block post
 	//- aquí empieza el contenido del post
-	h2 ¿Cómo instalar MongoDB Community Edition en Linux Ubuntu? 
+	h2 ¿Cómo crear un API REST falso en unos cuantos minutos? 
 	p.pre-irrelevant
 		|A partir de la versión 3.0, MongoDB se puede instalar de una forma más fácil en Linux
 		|Ubuntu ó Elementary OS.
@@ -19,132 +19,7 @@ block post
 		code.
 			sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 	br
-	h2 Creando un archivo tipo lista para MongoDB 
-	p.pre-irrelevant
-		|En este archivo se encontrará la lista de repositorios desde el cual se instalará mongoDB.
-	h2 Si estoy usando Elementary OS, ¿Cómo se qué versión de Ubuntu estoy usando?
-	p.pre-irrelevant
-		|Simplemente ejecutando el siguiente comando:
-
-	pre(class="prettyprint lang-sh")
-		code.
-			lsb_release -a -u | grep "Description"
-	p.pre-irrelevant
-		|Este comando nos dará un resultado parecido al siguiente:
-	pre(class="prettyprint lang-sh")
-		code.
-			Description:	Ubuntu 14.04 LTS
-	br
-
-	p
-		|Creamos el archivo tipo lista 
-		b /etc/apt/sources.list.d/mongodb-org-3.2.list
-		|, usando el comando
-		|apropiado para la versión de ubuntu que estés usando:
-
-	h3 Ubuntu 12.04
-	pre(class="prettyprint lang-sh")
-		code.
-			echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-	h3 Ubuntu 14.04
-	pre(class="prettyprint lang-sh")
-		code.
-			echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list"
-	br
-
-	h2 Actualizamos la base de datos local de paquetes de nuestro SO
-	pre(class="prettyprint lang-sh")
-		code.
-			sudo apt-get update
-	br
-
-	h2 Instalando los paquetes de MongoDB
-	p.pre-irrelevant
-		|Podemos instalar la última versión estable de MongoDB o una versión específica de MongoDB.
-	h3 Instalando la última versión estable de MongoDB
-	pre(class="prettyprint lang-sh")
-		code.
-			sudo apt-get install -y mongodb-org
-	br
-
-	h3 Instalando una versión específica de MongoDB
-	p.pre-irrelevant
-		|Para instalar una versión específica, debe especificar cada componente de forma individual junto con
-		|su número de versión, como en el siguiente ejemplo:
-	pre(class="prettyprint lang-sh")
-		code.
-			sudo apt-get install -y mongodb-org=3.2.5 mongodb-org-server=3.2.5 mongodb-org-shell=3.2.5
-			mongodb-org-mongos=3.2.5 mongodb-org-tools=3.2.5
-	br
-
-	p.pre-irrelevant
-		|Si sólo se instala mongodb-org = 3.2.5, y no se incluyen los demás componentes, se instalará la
-		|última versión de cada componente de MongoDB, independientemente de la versión que ha especificado.
-
-
-	h3 Comprobando la instalación de MongoDB
-	p.pre-irrelevant
-		|Para comprobar si la instalación de MongoDB a sido exitosa simplemente escribimos en la terminal el
-		|siguiente comando:
-
-	pre(class="prettyprint lang-sh")
-		code.
-			mongo --version
-
-	p.pre-irrelevant
-		|Si nos indica un número de versión, por ejemplo 
-		b  MongoDB shell version: 3.2.5
-		|, quiere decir que tenemos instalada correctamente la versión 3.2.5 de MongoDB.
-
-	h2 Ejecutando/Corriendo MongoDB
-	p.pre-irrelevant
-		|La instancia de MongoDB almacena sus archivos de datos en 
-		b /var/lib/mongodb 
-		|y su registro de logs en 
-		b /var/log/mongodb 
-		|por defecto, y se ejecuta utilizando la cuenta de usuario mongodb. Puede especificar directorios de
-		|registro de logs y archivo de datos alternos en 
-		b /etc/mongod.conf
-		|.
-
-	h3 Iniciando MongoDB
-	p.pre-irrelevant
-		|Ejecutamos el siguiente comando para iniciar MongoDB:
-
-	pre(class="prettyprint lang-sh")
-		code.
-			sudo service mongod start
-	br
-	h3 Comprobando que MongoDB ha iniciado correctamente 
-	p.pre-irrelevant
-		|Compruebe que el proceso 
-		b mongod 
-		|ha iniciado correctamente comprobando el contenido del archivo de registro en 
-		b /var/log/mongodb/mongod.log 
-		|con el siguiente comando:
-
-	pre(class="prettyprint lang-sh")
-		code.
-			cat /var/log/mongodb/mongod.log
-
-	p.pre-irrelevant
-		|Al ejecutar este comando podremos ver el log actual de MongoDB.
-
-	h3 Deteniendo el servicio de MongoDB
-	p.pre-irrelevant
-		|Para detener el servicio de MongoDB simplemente tenemos que escribir el siguiente comando:
-	pre(class="prettyprint lang-sh")
-		code.
-			sudo service mongod stop
-	br
-	h3 Reiniciando el servicio de MongoDB
-	p.pre-irrelevant
-		|Para reiniciar el servicio de MongoDB simplemente tenemos que escribir el siguiente comando:
-	pre(class="prettyprint lang-sh")
-		code.
-			sudo service mongod restart
-	br
-
+	
 	p
 		|Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
 		|duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
