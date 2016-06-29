@@ -1,34 +1,192 @@
 extends ./jade/_layout.jade
 block post
 	//- aquí empieza el contenido del post
-	h2 ¿Cómo crear un API REST falso en unos cuantos minutos? 
+	h2 ¿Cómo crear un API REST falso en unos cuantos minutos con json-server? 
 	p.pre-irrelevant
-		|A partir de la versión 3.0, MongoDB se puede instalar de una forma más fácil en Linux
-		|Ubuntu ó Elementary OS.
-		|En este artículo veremos cómo instalar MongoDB para Ubuntu 12.04 LTS (Precise Pangolin) y 14.04 LTS (Trusty Tahr).
+		|A veces necesitamos utilizar un API REST que 
+		b aún no ha sido construído
+		|, pero del cual ya conocemos su estructura final, 
+		|porque el API REST que esperamos es muy simple ó porque tal vez ya se 
+		|hizo un diseño previo de este con: 
+		a(href="http://raml.org/", target="_blank", title="raml") raml
+		|, 
+		a(href="https://apiblueprint.org/", target="_blank", title="blueprint") blueprint
+		|, etc.
+		
 	p.pre-irrelevant
-		|Es muy probable que este tipo de instalación también funcione correctamente para las nuevas versiones de Ubuntu.
+		|Realmente pueden ser muchos los casos, no importa si eres Desarrollador Front-End, 
+		|Desarrollador de Aplicaciones Móviles, Desarrollador Back-End, etc. Puede que necesites tener un
+		|Servicio REST creado rápidamente para hacer el prototipado de tus aplicaciones, 
+		|diversas pruebas para tu aplicación, etc. 
+		
+	p.pre-irrelevant
+		|Dicho todo lo anterior, vamos a comenzar a crear nuestro 
+		b API REST falso 
+		|y comenzaremos a utilizarlo en cuestión de minutos, ¡Veamos cómo hacerlo!.
 
-	h2 Importando la clave pública usada por el sistema gestionador de paquetes de Ubuntu
+	h2 Pre-requisitos para utilizar json-server
+	p
+		|El único requisito es tener instalado  
+		a(href="http://frontendlabs.io/232--como-instalar-node-js-debian-linux", target="_blank", title="Como instalar node js en ubuntu linux") Node.JS
+		|.
+
+	h2 Creando nuestro API REST Falso
 	p.pre-irrelevant
-		|Las herramientas de gestión de paquetes de Ubuntu (es decir, dpkg y apt) garantizan la coherencia y
-		|la autenticidad del paquete, al exigir que los distribuidores firmen los paquetes con claves GPG.
-		|Ejecuta el siguiente comando para importar la clave pública GPG de MongoDB:
+		|Primero creamos una carpeta para el API REST Falso e ingresamos.
 
 	pre(class="prettyprint lang-sh")
 		code.
-			sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-	br
+			mkdir api-fake && cd api-fake
+
+	p.pre-irrelevant
+		|Luego daremos por iniciado nuestro proyecto creando interactivamente nuestro archivo 
+		span(class="inline_file") package.json
+		|, con la siguiente instrucción:
+
+	pre(class="prettyprint lang-sh")
+		code.
+			npm init -f
+
+	blockquote.mini
+		|Mediante la instrucción `npm init -f` o `npm init --force` evitamos todas las preguntas incomodas de `npm init`.
+
+	h2 Instalando json-server como dependencia
 	
+	p.pre-irrelevant
+		|Instalamos la única dependencia de nuestro proyecto, la cual es: 
+		b json-server
+		|:
+
+	pre(class="prettyprint lang-sh")
+		code.
+			npm i -S json-server
+
+	blockquote.mini
+		|Mediante la instrucción `npm i -S` podemos instalar las dependencias de nuestro proyecto, esto hará que dentro de nuestro archivo package.json se agregue la llave `dependencies` y allí se almacenen las dependencias principales de nuestro proyecto.
+
+	p.pre-irrelevant
+		|Luego de instalar json-server, nuestro archivo 
+		b package.json 
+		| debe verse algo así:
+
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "name": "api-fake",
+			  "version": "1.0.0",
+			  "description": "",
+			  "main": "index.js",
+			  "scripts": {
+			    "test": "echo \"Error: no test specified\" && exit 1"
+			  },
+			  "keywords": [],
+			  "author": "",
+			  "license": "ISC",
+			  "dependencies": {
+			    "json-server": "^0.8.14"
+			  }
+			}
+
+	br
+
+	h2 Creando la base de datos para json-server
+	
+	p.pre-irrelevant 
+		|Luego simplemente creamos la carpeta 
+		span.inline_folder db
+		|  y luego creamos el archivo 
+		span.inline_file database.json
+		|  dentro de esta.
+	
+	pre(class="prettyprint lang-sh")
+		code.
+			mkdir -p ./db/ && touch ./db/database.json
+	
+	p.pre-irrelevant
+		|Ahora procedemos a agregar el contenido de nuestra base de datos, 
+		|en este caso agregaremos el contenido para la tabla 
+		b customers
+		|(clientes), para lo cual editamos el archivo 
+		span.inline_file ./db/database.json
+		|.
+		
+	p.pre-irrelevant
+		|En nuestra base de datos json simplemente agregamos lo siguiente:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "customers": []
+			}
+	
+	h2 Configurando y Ejecutando nuestro servidor con json-server
+	p.pre-irrelevant
+		|Ahora sólo nos falta configurar nuestro servidor json-server, 
+		|para lo cual editamos nuestro archivo 
+		span.inline_file ./package.json
+		| y agregamos la tarea que llamaremos 
+		b server
+		|, de la siguiente manera:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "name": "api-fake",
+			  "version": "1.0.0",
+			  "description": "",
+			  "main": "index.js",
+			  "scripts": {
+			    "server": "json-server --watch ./db/database.json --port 3004",
+			    "test": "echo \"Error: no test specified\" && exit 1"
+			  },
+			  "keywords": [],
+			  "author": "",
+			  "license": "ISC",
+			  "dependencies": {
+			    "json-server": "^0.8.14"
+			  }
+			}
+
+	p.pre-irrelevant
+		|Como podemos apreciar sólo hemos agregado la línea:
+
+	pre(class="prettyprint lang-json")
+		code.
+			"server": "json-server --watch ./db/database.json --port 3004"
+	
+	p.pre-irrelevant
+		|En la cual simplemente le indicamos a npm que creé la tarea llamada 
+		b server
+		|  ejecutando json-server más 2 parámetros 
+		b watch
+		|  y 
+		b port
+		|. Con watch le decimos que este al tanto de cualquier cambio en nuestra base de datos 
+		|y con el parámetro port le indicamos que use el puerto 3004, 
+		|básicamente para no tener conflictos con otros servicios.
+	
+	h3 Ejecutando el servidor
+	
+	p.pre-irrelevant
+		| Para ejecutar nuestro servidor, simplemente escribimos lo siguiente en nuestro terminal:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			npm run server
+	
+	p.pre-irrelevant
+		|Ahora abre cualquier navegador e ingresa a la siguiente dirección 
+		a(href="http://localhost:3004", target="_blank", title="json-server local") http://localhost:3004
+		| y listo! ya tenemos corriendo nuestro servidor.
+	
+	
+	h2 xxxx
 	p
 		|Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
 		|duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
 		|olviden de compartir el artículo.
 	p
 		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/04/mongodb-logo-gray.png", alt="como instalar mongodb en linux ubuntu")
-
-	p
-
 
 	h2 Fuentes
 	p
