@@ -165,19 +165,74 @@ block post
 		|y con el parámetro port le indicamos que use el puerto 3004, 
 		|básicamente para no tener conflictos con otros servicios.
 	
-	h3 Ejecutando el servidor
+	h3 Corriendo nuestro servidor
 	
 	p.pre-irrelevant
-		| Para ejecutar nuestro servidor, simplemente escribimos lo siguiente en nuestro terminal:
+		| Para correr el servidor, simplemente escribimos lo siguiente en nuestro terminal:
 	
 	pre(class="prettyprint lang-json")
 		code.
 			npm run server
+
+	p.pre-irrelevant
+		|Si todo funcionó correctamente nuestro terminal debe verse así:
+	
+	p.pre-irrelevant
+		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/06/json-server-running-terminal.png", alt="json server running terminal")
 	
 	p.pre-irrelevant
 		|Ahora abre cualquier navegador e ingresa a la siguiente dirección 
 		a(href="http://localhost:3004", target="_blank", title="json-server local") http://localhost:3004
-		| y listo! ya tenemos corriendo nuestro servidor.
+		|  y listo!, ya tenemos corriendo nuestro servidor.
+
+	p.pre-irrelevant
+		|Y en nuestro navegador se debe ver así:
+
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/json-server-running-browser.png", alt="json server running browser")
+
+	h2 ¿Cómo uso json-server?
+	p.pre-irrelevant
+		|Ahora que ya tenemos corriendo el servidor, podremos conocer el verdadero poder de json-server 
+		b insertando, actualizando, consultando y eliminando datos de la tabla customers 
+		| en nuestra base de datos. Todo eso lo haremos utilizando los verbos HTTP(get, post, put y delete)
+		| para comunicarnos con nuestro API REST falso.
+	
+	h2 Postman
+	p.pre-irrelevant
+		a(href="https://www.getpostman.com", target="_blank", title="postman") Postman 
+		| es un cliente REST, que hace muy fácil probar API REST, ya que cuenta con una interfaz muy amigable, 
+		|pruebas, sincronización, colaboración y un sin fin de buenas características, usarlo es muy fácil, 
+		|tanto así que no lo explicaremos en este artículo, tan sólo con las pruebas que haremos
+		| podrán darse cuenta lo fácil que es usarlo. Postman tiene su plugin para Google Chrome 
+		|y sus Aplicaciones de escritorio también.
+	
+	p
+		img.aligncenter(src="http://frontendlabs.io/wp-content/uploads/2016/06/postman-api-rest-client.png", alt="postman api rest client")
+	
+	h3 Insertando datos en la tabla customers(POST)
+	
+	p.pre-irrelevant
+		|Usando postman vamos a insertar el siguiente objeto de datos hacia la tabla customers 
+		|mediante el método 
+		span.inline_code POST
+		| .
+	
+	p.pre-irrelevant
+		|Abrimos postman e insertamos la url siguiente: 
+		a(href="http://localhost:3004", target="_blank", title="json-server local") http://localhost:3004
+	
+	pre(class="prettyprint lang-json")
+		code.
+			{
+				"name": "Nombre Apellido",
+				"gender": "male",
+				"email": "juan.perez@gmail.com"
+			}
+
+	p.pre-irrelevant
+		a(href="http://localhost:3004/customers", target="_blank", title="json-server local") http://localhost:3004/customers
+	
 	
 	
 	h2 xxxx
@@ -185,8 +240,7 @@ block post
 		|Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
 		|duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
 		|olviden de compartir el artículo.
-	p
-		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/04/mongodb-logo-gray.png", alt="como instalar mongodb en linux ubuntu")
+
 
 	h2 Fuentes
 	p

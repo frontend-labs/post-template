@@ -111,18 +111,46 @@
             y con el parámetro port le indicamos que use el puerto 3004, 
             básicamente para no tener conflictos con otros servicios.
           </p>
-          <h3>Ejecutando el servidor</h3>
-          <p class="pre-irrelevant">Para ejecutar nuestro servidor, simplemente escribimos lo siguiente en nuestro terminal:</p>
+          <h3>Corriendo nuestro servidor</h3>
+          <p class="pre-irrelevant">Para correr el servidor, simplemente escribimos lo siguiente en nuestro terminal:</p>
           <pre class="prettyprint lang-json"><code>npm run server
 </code></pre>
-          <p class="pre-irrelevant">Ahora abre cualquier navegador e ingresa a la siguiente dirección <a href="http://localhost:3004" target="_blank" title="json-server local">http://localhost:3004</a>y listo! ya tenemos corriendo nuestro servidor.</p>
+          <p class="pre-irrelevant">Si todo funcionó correctamente nuestro terminal debe verse así:</p>
+          <p class="pre-irrelevant"><img src="http://frontendlabs.io/wp-content/uploads/2016/06/json-server-running-terminal.png" alt="json server running terminal" class="aligncenter"></p>
+          <p class="pre-irrelevant">Ahora abre cualquier navegador e ingresa a la siguiente dirección <a href="http://localhost:3004" target="_blank" title="json-server local">http://localhost:3004</a> y listo!, ya tenemos corriendo nuestro servidor.</p>
+          <p class="pre-irrelevant">Y en nuestro navegador se debe ver así:</p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/06/json-server-running-browser.png" alt="json server running browser" class="aligncenter bordered"></p>
+          <h2>¿Cómo uso json-server?</h2>
+          <p class="pre-irrelevant">Ahora que ya tenemos corriendo el servidor, podremos conocer el verdadero poder de json-server <b>insertando, actualizando, consultando y eliminando datos de la tabla customers </b>en nuestra base de datos. Todo eso lo haremos utilizando los verbos HTTP(get, post, put y delete)
+            para comunicarnos con nuestro API REST falso.
+          </p>
+          <h2>Postman</h2>
+          <p class="pre-irrelevant"><a href="https://www.getpostman.com" target="_blank" title="postman">Postman </a>es un cliente REST, que hace muy fácil probar API REST, ya que cuenta con una interfaz muy amigable, 
+            pruebas, sincronización, colaboración y un sin fin de buenas características, usarlo es muy fácil, 
+            tanto así que no lo explicaremos en este artículo, tan sólo con las pruebas que haremos
+            podrán darse cuenta lo fácil que es usarlo. Postman tiene su plugin para Google Chrome 
+            y sus Aplicaciones de escritorio también.
+          </p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/06/postman-api-rest-client.png" alt="postman api rest client" class="aligncenter"></p>
+          <h3>Insertando datos en la tabla customers(POST)</h3>
+          <p class="pre-irrelevant">
+            Usando postman vamos a insertar el siguiente objeto de datos hacia la tabla customers 
+            mediante el método <span class="inline_code">POST</span>.
+          </p>
+          <p class="pre-irrelevant">Abrimos postman e insertamos la url siguiente: <a href="http://localhost:3004" target="_blank" title="json-server local">http://localhost:3004</a></p>
+          <pre class="prettyprint lang-json"><code>{
+	"name": "Nombre Apellido",
+	"gender": "male",
+	"email": "juan.perez@gmail.com"
+}
+</code></pre>
+          <p class="pre-irrelevant"><a href="http://localhost:3004/customers" target="_blank" title="json-server local">http://localhost:3004/customers</a></p>
           <h2>xxxx</h2>
           <p>
             Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
             duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
             olviden de compartir el artículo.
           </p>
-          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/04/mongodb-logo-gray.png" alt="como instalar mongodb en linux ubuntu" class="aligncenter"></p>
           <h2>Fuentes</h2>
           <p>MongoDB, Inc. <i>Install MongoDB Community Edition on Ubuntu.</i> [En línea] [Fecha de consulta: 19 de Abril del 2016]. <br>Disponible en: <a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" title="Install MongoDB Community Edition on Ubuntu">https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</a>.</p>
           <!-- end-->
