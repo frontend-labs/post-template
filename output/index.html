@@ -137,22 +137,21 @@
             Usando postman vamos a insertar el siguiente objeto de datos hacia la tabla customers 
             mediante el método <span class="inline_code">POST</span>.
           </p>
-          <p class="pre-irrelevant">Abrimos postman e insertamos la url siguiente: <a href="http://localhost:3004" target="_blank" title="json-server local">http://localhost:3004</a></p>
+          <p class="pre-irrelevant">- Abrimos postman y en el campo <b>url  </b>insertamos lo siguiente: <a href="http://localhost:3004" target="_blank" title="json-server local">http://localhost:3004</a>. <br>- En el combo de selección de métodos http seleccionamos <span class="inline_code">POST</span>.<br>- En la pestaña <b>Body </b>seleccionamos la opción  <b>raw</b>.<br>- Luego aparecerá un nuevo combo a la derecha de la opción raw, del cual seleccionamos
+            la opción: <b>JSON(application/json)</b>.<br>- Por último escribimos lo siguiente en el contenido del cuerpo(body) de la solicitud(request). 
+          </p>
           <pre class="prettyprint lang-json"><code>{
-	"name": "Nombre Apellido",
-	"gender": "male",
-	"email": "juan.perez@gmail.com"
+  "name": "Nombre Apellido",
+  "gender": "male",
+  "email": "juan.perez@gmail.com"
 }
 </code></pre>
-          <p class="pre-irrelevant"><a href="http://localhost:3004/customers" target="_blank" title="json-server local">http://localhost:3004/customers</a></p>
-          <h2>xxxx</h2>
-          <p>
-            Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
-            duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
-            olviden de compartir el artículo.
-          </p>
+          <p class="pre-irrelevant">Deberíamos tener algo muy parecido a lo siguiente:</p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post.png" alt="customers post" class="aligncenter bordered"></p>
+          <p class="pre-irrelevant">Luego le damos click al botón enviar y si todo nos fue bien entonces veremos algo así:</p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post-response.png" alt="customers post response" class="aligncenter bordered"></p>
           <h2>Fuentes</h2>
-          <p>MongoDB, Inc. <i>Install MongoDB Community Edition on Ubuntu.</i> [En línea] [Fecha de consulta: 19 de Abril del 2016]. <br>Disponible en: <a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" title="Install MongoDB Community Edition on Ubuntu">https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</a>.</p>
+          <p>NPM, Inc. <i>json-server.</i> [En línea] [Fecha de consulta: 29 de Junio del 2016]. <br>Disponible en: <a href="https://www.npmjs.com/package/json-server" target="_blank" title="json server">https://www.npmjs.com/package/json-server</a>.</p>
           <!-- end-->
         </div>
       </article>

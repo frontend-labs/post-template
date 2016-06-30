@@ -219,36 +219,57 @@ block post
 		| .
 	
 	p.pre-irrelevant
-		|Abrimos postman e insertamos la url siguiente: 
+		|- Abrimos postman y en el campo 
+		b url  
+		|insertamos lo siguiente: 
 		a(href="http://localhost:3004", target="_blank", title="json-server local") http://localhost:3004
-	
+		|. 
+		br
+		|- En el combo de selección de métodos http seleccionamos 
+		span.inline_code POST
+		|.
+		br
+		|- En la pestaña 
+		b Body 
+		| seleccionamos la opción  
+		b raw
+		|.
+		br
+		|- Luego aparecerá un nuevo combo a la derecha de la opción raw, del cual seleccionamos
+		|la opción: 
+		b JSON(application/json)
+		|.
+		br
+		|- Por último escribimos lo siguiente en el contenido del cuerpo(body) de la solicitud(request). 
 	pre(class="prettyprint lang-json")
 		code.
 			{
-				"name": "Nombre Apellido",
-				"gender": "male",
-				"email": "juan.perez@gmail.com"
+			  "name": "Nombre Apellido",
+			  "gender": "male",
+			  "email": "juan.perez@gmail.com"
 			}
 
 	p.pre-irrelevant
-		a(href="http://localhost:3004/customers", target="_blank", title="json-server local") http://localhost:3004/customers
+		|Deberíamos tener algo muy parecido a lo siguiente:
 	
-	
-	
-	h2 xxxx
 	p
-		|Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
-		|duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
-		|olviden de compartir el artículo.
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post.png", alt="customers post")
+	
+	p.pre-irrelevant
+		|Luego le damos click al botón enviar y si todo nos fue bien entonces veremos algo así:
+	
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post-response.png", alt="customers post response")
+	
 
 
 	h2 Fuentes
 	p
-		|MongoDB, Inc. 
-		i Install MongoDB Community Edition on Ubuntu.
-		|  [En línea] [Fecha de consulta: 19 de Abril del 2016]. 
+		|NPM, Inc. 
+		i json-server.
+		|  [En línea] [Fecha de consulta: 29 de Junio del 2016]. 
 		br
 		|Disponible en: 
-		a(href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/", target="_blank",
-		title="Install MongoDB Community Edition on Ubuntu") https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+		a(href="https://www.npmjs.com/package/json-server", target="_blank",
+		title="json server") https://www.npmjs.com/package/json-server
 		|.
