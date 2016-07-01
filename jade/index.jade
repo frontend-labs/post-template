@@ -124,7 +124,7 @@ block post
 		|Ahora sólo nos falta configurar nuestro servidor json-server, 
 		|para lo cual editamos nuestro archivo 
 		span.inline_file ./package.json
-		| y agregamos la tarea que llamaremos 
+		|  y agregamos la tarea que llamaremos 
 		b server
 		|, de la siguiente manera:
 	
@@ -250,17 +250,75 @@ block post
 			}
 
 	p.pre-irrelevant
-		|Deberíamos tener algo muy parecido a lo siguiente:
+		|Entonces, nuestra ventana de postman debería verse algo así:
 	
 	p
 		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post.png", alt="customers post")
 	
 	p.pre-irrelevant
-		|Luego le damos click al botón enviar y si todo nos fue bien entonces veremos algo así:
+		|Luego le damos click al botón enviar y si todo sale bien, entonces veremos la siguiente respuesta:
 	
 	p
 		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post-response.png", alt="customers post response")
 	
+	p.pre-irrelevant
+		|Como podemos apreciar postman nos indica el 
+		b Status 
+		| de la respuesta.
+		br
+		|Además nos muestra el 
+		b cuerpo de la respuesta
+		|, en la cual podemos ver el campo adicional 
+		b id
+		|, el mismo que es generado por json-server para llevar el control de los registros en nuestras tablas.
+		
+	p.pre-irrelevant
+		|Ahora agregaremos otro registro más a nuestra tabla customers, así que realizamos los mismos pasos 
+		| como paso final ingresamos la siguiente información del segundo registro y enviamos esta información:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "name": "Nombre Apellido",
+			  "gender": "male",
+			  "email": "nombre.apellido@gmail.com"
+			}
+
+	p.pre-irrelevant
+		|Con esto ya hemos insertado 2 registros en nuestra tabla customers mediante nuestra API REST falsa.	
+
+	h3 Obteniendo datos de la tabla customers(GET)
+
+	p.pre-irrelevant
+		|Usando postman vamos a obtener todos los datos de la tabla customers. 
+		|Para llevar esto a cabo, simplemente abrimos una nueva ventana de postman e ingresamos la siguiente url: 
+		a(href="http://localhost:3004/customers", target="_blank", title="json-server local customers") http://localhost:3004/customers
+		| , luego elegimos el método 
+		span.inline_code GET
+		| y por último hacemos click sobre el 
+		b botón enviar 
+		| y así obtenemos la lista de los 2 registros que hemos agregado anteriormente, como podemos apreciar cada uno tiene su atributo 
+		b id
+		|.
+	
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-get-response.png", alt="customers get response")
+		
+	p.pre-irrelevant
+		|Ahora queremos obtener sólo los datos del registro con el 
+		b id  
+		|2.
+		br
+		|Para llevar esto a cabo, simplemente abrimos una nueva ventana de postman e ingresamos la siguiente url: 
+		a(href="http://localhost:3004/customers/2", target="_blank", title="json-server local customers") http://localhost:3004/customers/2
+		| , elegimos el método 
+		span.inline_code GET
+		| y luego hacemos click sobre el 
+		b botón enviar
+		|. Para de esta manera obtener sólo los datos del 2do registro.
+
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-get-response-id-2.png", alt="customers get response id 2")
 
 
 	h2 Fuentes
