@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta name="language" content="es">
+    <title>Frontend Labs</title>
+    <link rel="stylesheet" id="font-awesome-css" href="../themes/ink/assets/css/font-awesome.css" type="text/css" media="all">
+    <link rel="stylesheet" id="stag-shortcode-styles-css" href="../themes/plugins/stagtools/assets/css/stag-shortcodes.css?ver=1.2." type="text/css" media="all">
+    <link rel="stylesheet" id="main-style-css" href="../themes/plugins/wens-social-links/css/main-style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="easy-facebook-likebox-plugin-styles-css" href="../themes/plugins/easy-facebook-likebox/public/assets/css/public.css?ver=4.2" type="text/css" media="all">
+    <link rel="stylesheet" id="easy-facebook-likebox-popup-styles-css" href="../themes/plugins/easy-facebook-likebox/public/assets/popup/magnific-popup.css?ver=4.2" type="text/css" media="all">
+    <link rel="stylesheet" id="stag-google-fonts-css" href="../themes/general/css/monserrat.css" type="text/css" media="all">
+    <link rel="stylesheet" id="stag-style-css" href="../themes/ink/style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="jetpack_css-css" href="../themes/plugins/jetpack/css/jetpack.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../themes/general/css/general.css" type="text/css" media="all">
+    <script type="text/javascript" src="../themes/general/js/run_prettify.js"></script>
+  </head>
+  <body class="single single-post single-format-standard chrome header-over stagtools">
+    <main id="main" class="site-main">
+      <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
+        <div class="entry-content">
+          <!-- begin-->
+          <h2>¿Cómo instalar MongoDB Community Edition en Linux Ubuntu? </h2>
+          <p class="pre-irrelevant">
+            A partir de la versión 3.0, MongoDB se puede instalar de una forma más fácil en Linux
+            Ubuntu ó Elementary OS.
+            En este artículo veremos cómo instalar MongoDB para Ubuntu 12.04 LTS (Precise Pangolin) y 14.04 LTS (Trusty Tahr).
+          </p>
+          <p class="pre-irrelevant">Es muy probable que este tipo de instalación también funcione correctamente para las nuevas versiones de Ubuntu.</p>
+          <h2>Importando la clave pública usada por el sistema gestionador de paquetes de Ubuntu</h2>
+          <p class="pre-irrelevant">
+            Las herramientas de gestión de paquetes de Ubuntu (es decir, dpkg y apt) garantizan la coherencia y
+            la autenticidad del paquete, al exigir que los distribuidores firmen los paquetes con claves GPG.
+            Ejecuta el siguiente comando para importar la clave pública GPG de MongoDB:
+          </p>
+          <pre class="prettyprint lang-sh"><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927</code></pre><br>
+          <h2>Creando un archivo tipo lista para MongoDB </h2>
+          <p class="pre-irrelevant">En este archivo se encontrará la lista de repositorios desde el cual se instalará mongoDB.</p>
+          <h2>Si estoy usando Elementary OS, ¿Cómo se qué versión de Ubuntu estoy usando?</h2>
+          <p class="pre-irrelevant">Simplemente ejecutando el siguiente comando:</p>
+          <pre class="prettyprint lang-sh"><code>lsb_release -a -u | grep "Description"</code></pre>
+          <p class="pre-irrelevant">Este comando nos dará un resultado parecido al siguiente:</p>
+          <pre class="prettyprint lang-sh"><code>Description:	Ubuntu 14.04 LTS</code></pre><br>
+          <p>Creamos el archivo tipo lista <b>/etc/apt/sources.list.d/mongodb-org-3.2.list</b>, usando el comando
+            apropiado para la versión de ubuntu que estés usando:
+          </p>
+          <h3>Ubuntu 12.04</h3>
+          <pre class="prettyprint lang-sh"><code>echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list</code></pre>
+          <h3>Ubuntu 14.04</h3>
+          <pre class="prettyprint lang-sh"><code>echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list"</code></pre><br>
+          <h2>Actualizamos la base de datos local de paquetes de nuestro SO</h2>
+          <pre class="prettyprint lang-sh"><code>sudo apt-get update</code></pre><br>
+          <h2>Instalando los paquetes de MongoDB</h2>
+          <p class="pre-irrelevant">Podemos instalar la última versión estable de MongoDB o una versión específica de MongoDB.</p>
+          <h3>Instalando la última versión estable de MongoDB</h3>
+          <pre class="prettyprint lang-sh"><code>sudo apt-get install -y mongodb-org</code></pre><br>
+          <h3>Instalando una versión específica de MongoDB</h3>
+          <p class="pre-irrelevant">
+            Para instalar una versión específica, debe especificar cada componente de forma individual junto con
+            su número de versión, como en el siguiente ejemplo:
+          </p>
+          <pre class="prettyprint lang-sh"><code>sudo apt-get install -y mongodb-org=3.2.5 mongodb-org-server=3.2.5 mongodb-org-shell=3.2.5
+mongodb-org-mongos=3.2.5 mongodb-org-tools=3.2.5</code></pre><br>
+          <p class="pre-irrelevant">
+            Si sólo se instala mongodb-org = 3.2.5, y no se incluyen los demás componentes, se instalará la
+            última versión de cada componente de MongoDB, independientemente de la versión que ha especificado.
+          </p>
+          <h3>Comprobando la instalación de MongoDB</h3>
+          <p class="pre-irrelevant">
+            Para comprobar si la instalación de MongoDB a sido exitosa simplemente escribimos en la terminal el
+            siguiente comando:
+          </p>
+          <pre class="prettyprint lang-sh"><code>mongo --version
+</code></pre>
+          <p class="pre-irrelevant">Si nos indica un número de versión, por ejemplo <b> MongoDB shell version: 3.2.5</b>, quiere decir que tenemos instalada correctamente la versión 3.2.5 de MongoDB.</p>
+          <h2>Ejecutando/Corriendo MongoDB</h2>
+          <p class="pre-irrelevant">La instancia de MongoDB almacena sus archivos de datos en <b>/var/lib/mongodb </b>y su registro de logs en <b>/var/log/mongodb </b>por defecto, y se ejecuta utilizando la cuenta de usuario mongodb. Puede especificar directorios de
+            registro de logs y archivo de datos alternos en <b>/etc/mongod.conf</b>.
+          </p>
+          <h3>Iniciando MongoDB</h3>
+          <p class="pre-irrelevant">Ejecutamos el siguiente comando para iniciar MongoDB:</p>
+          <pre class="prettyprint lang-sh"><code>sudo service mongod start</code></pre><br>
+          <h3>Comprobando que MongoDB ha iniciado correctamente </h3>
+          <p class="pre-irrelevant">Compruebe que el proceso <b>mongod </b>ha iniciado correctamente comprobando el contenido del archivo de registro en <b>/var/log/mongodb/mongod.log </b>con el siguiente comando:</p>
+          <pre class="prettyprint lang-sh"><code>cat /var/log/mongodb/mongod.log
+</code></pre>
+          <p class="pre-irrelevant">Al ejecutar este comando podremos ver el log actual de MongoDB.</p>
+          <h3>Deteniendo el servicio de MongoDB</h3>
+          <p class="pre-irrelevant">Para detener el servicio de MongoDB simplemente tenemos que escribir el siguiente comando:</p>
+          <pre class="prettyprint lang-sh"><code>sudo service mongod stop</code></pre><br>
+          <h3>Reiniciando el servicio de MongoDB</h3>
+          <p class="pre-irrelevant">Para reiniciar el servicio de MongoDB simplemente tenemos que escribir el siguiente comando:</p>
+          <pre class="prettyprint lang-sh"><code>sudo service mongod restart</code></pre><br>
+          <p>
+            Bueno amigos espero que este artículo les sea de utilidad, si encuentran algún fallo por favor no
+            duden en comentarlo para poder corregir los pasos de la instalación y ya saben por favor no se
+            olviden de compartir el artículo.
+          </p>
+          <p><img src="http://frontendlabs.io/wp-content/uploads/2016/04/mongodb-logo-gray.png" alt="como instalar mongodb en linux ubuntu" class="aligncenter"></p>
+          <p></p>
+          <h2>Fuentes</h2>
+          <p>MongoDB, Inc. <i>Install MongoDB Community Edition on Ubuntu.</i> [En línea] [Fecha de consulta: 19 de Abril del 2016]. <br>Disponible en: <a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" title="Install MongoDB Community Edition on Ubuntu">https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</a>.</p>
+          <!-- end-->
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

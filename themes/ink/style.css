@@ -3556,3 +3556,21 @@ p.irrelevant {
 	}
 }
 
+
+.banners{
+	display: block;
+	margin: 8px auto 40px auto;
+}
+
+.entry-content blockquote.mini{
+	margin-bottom: 2.75rem;
+	margin-top: 2rem;
+	padding-left: 3rem;
+}
+
+pre.prettyprint.prettyprinted {
+	margin-bottom: 2rem;
+}
+img.bordered{
+	border: solid 2px #1882BC;
+}

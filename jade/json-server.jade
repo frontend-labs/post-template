@@ -1,0 +1,333 @@
+extends ./jade/_layout.jade
+block post
+	//- aquí empieza el contenido del post
+	h2 ¿Cómo crear un API REST falso en unos cuantos minutos con json-server? 
+	p.pre-irrelevant
+		|A veces necesitamos utilizar un API REST que 
+		b aún no ha sido construído
+		|, pero del cual ya conocemos su estructura final, 
+		|porque el API REST que esperamos es muy simple o porque tal vez ya se 
+		|hizo un diseño previo de este con: 
+		a(href="http://raml.org/", target="_blank", title="raml") raml
+		|, 
+		a(href="https://apiblueprint.org/", target="_blank", title="blueprint") blueprint
+		|, etc.
+		
+	p.pre-irrelevant
+		|Realmente pueden ser muchos los casos, no importa si eres desarrollador Front-End, 
+		|desarrollador de aplicaciones móviles, desarrollador Back-End, etc. Puede que necesites tener un
+		|Servicio REST creado rápidamente para hacer el prototipado de tus aplicaciones, 
+		|diversas pruebas para tu aplicación, etc. 
+		
+	p.pre-irrelevant
+		|Dicho todo lo anterior, vamos a comenzar a crear nuestro 
+		b API REST falso 
+		|y comenzaremos a utilizarlo en cuestión de minutos: ¡Veamos cómo hacerlo!
+
+	h2 Pre-requisitos para utilizar json-server
+	p
+		|El único requisito es tener instalado  
+		a(href="http://frontendlabs.io/232--como-instalar-node-js-debian-linux", target="_blank", title="Como instalar node js en ubuntu linux") Node.JS
+		|.
+
+	h2 Creando nuestro API REST Falso
+	p.pre-irrelevant
+		|Primero creamos una carpeta para el API REST falso e ingresamos.
+
+	pre(class="prettyprint lang-sh")
+		code.
+			mkdir api-fake && cd api-fake
+
+	p.pre-irrelevant
+		|Luego daremos por iniciado nuestro proyecto creando interactivamente nuestro archivo 
+		span(class="inline_file") package.json
+		|, con la siguiente instrucción.
+
+	pre(class="prettyprint lang-sh")
+		code.
+			npm init -f
+
+	blockquote.mini
+		|Mediante la instrucción `npm init -f` o `npm init --force` evitamos todas las preguntas incómodas de `npm init`.
+
+	h2 Instalando json-server como dependencia
+	
+	p.pre-irrelevant
+		|Instalamos la única dependencia de nuestro proyecto, la cual es: 
+		b json-server
+
+	pre(class="prettyprint lang-sh")
+		code.
+			npm i -S json-server
+
+	blockquote.mini
+		|Mediante la instrucción `npm i -S` podemos instalar las dependencias de nuestro proyecto, esto hará que dentro de nuestro archivo package.json se agregue la llave `dependencies` y allí se almacenen las dependencias principales de nuestro proyecto.
+
+	p.pre-irrelevant
+		|Luego de instalar json-server, nuestro archivo 
+		b package.json 
+		| debe verse algo así:
+
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "name": "api-fake",
+			  "version": "1.0.0",
+			  "description": "",
+			  "main": "index.js",
+			  "scripts": {
+			    "test": "echo \"Error: no test specified\" && exit 1"
+			  },
+			  "keywords": [],
+			  "author": "",
+			  "license": "ISC",
+			  "dependencies": {
+			    "json-server": "^0.8.14"
+			  }
+			}
+
+	br
+
+	h2 Creando la base de datos para json-server
+	
+	p.pre-irrelevant 
+		|Luego simplemente creamos la carpeta 
+		span.inline_folder db
+		|  y dentro de esta creamos el archivo 
+		span.inline_file database.json
+		|.
+	
+	pre(class="prettyprint lang-sh")
+		code.
+			mkdir -p ./db/ && touch ./db/database.json
+	
+	p.pre-irrelevant
+		|Ahora procedemos a agregar el contenido a nuestra base de datos, 
+		|en este caso agregaremos el contenido para la tabla 
+		b customers
+		|(clientes), para lo cual editamos el archivo 
+		span.inline_file ./db/database.json
+		|.
+		
+	p.pre-irrelevant
+		|En nuestra base de datos json simplemente agregamos lo siguiente:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "customers": []
+			}
+	
+	h2 Configurando y Ejecutando nuestro servidor con json-server
+	p.pre-irrelevant
+		|Ahora sólo nos falta configurar nuestro servidor json-server, 
+		|para lo cual editamos nuestro archivo 
+		span.inline_file ./package.json
+		|  y agregamos la tarea que llamaremos 
+		b server
+		|, de la siguiente manera:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "name": "api-fake",
+			  "version": "1.0.0",
+			  "description": "",
+			  "main": "index.js",
+			  "scripts": {
+			    "server": "json-server --watch ./db/database.json --port 3004",
+			    "test": "echo \"Error: no test specified\" && exit 1"
+			  },
+			  "keywords": [],
+			  "author": "",
+			  "license": "ISC",
+			  "dependencies": {
+			    "json-server": "^0.8.14"
+			  }
+			}
+
+	p.pre-irrelevant
+		|Como podemos apreciar sólo hemos agregado la línea:
+
+	pre(class="prettyprint lang-json")
+		code.
+			"server": "json-server --watch ./db/database.json --port 3004"
+	
+	p.pre-irrelevant
+		|En la cual simplemente le indicamos a npm que creé la tarea llamada 
+		b server
+		|  ejecutando json-server más 2 parámetros 
+		b watch
+		|  y 
+		b port
+		|. Con watch le decimos que esté al tanto de cualquier cambio en nuestra base de datos 
+		|y con el parámetro port le indicamos que use el puerto 3004, 
+		|básicamente para no tener conflictos con otros servicios.
+	
+	h3 Corriendo nuestro servidor
+	
+	p.pre-irrelevant
+		| Para correr el servidor, simplemente escribimos lo siguiente en nuestro terminal:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			npm run server
+
+	p.pre-irrelevant
+		|Si todo funcionó correctamente nuestro terminal debe verse así:
+	
+	p.pre-irrelevant
+		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/06/json-server-running-terminal.png", alt="json server running terminal")
+	
+	p.pre-irrelevant
+		|Ahora abre cualquier navegador e ingresa a la siguiente dirección 
+		a(href="http://localhost:3004", target="_blank", title="json-server local") http://localhost:3004
+		|  y listo!, ya tenemos corriendo nuestro servidor.
+
+	p.pre-irrelevant
+		|Y en nuestro navegador se debe ver así:
+
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/json-server-running-browser.png", alt="json server running browser")
+
+	h2 ¿Cómo uso json-server?
+	p.pre-irrelevant
+		|Ahora que ya tenemos corriendo el servidor, podremos conocer el verdadero poder de json-server  
+		b insertando, actualizando, consultando y eliminando datos de la tabla customers 
+		| en nuestra base de datos. Todo eso lo haremos utilizando los verbos HTTP (get, post, put y delete)
+		| para comunicarnos con nuestro API REST falso.
+	
+	h2 Postman
+	p.pre-irrelevant
+		a(href="https://www.getpostman.com", target="_blank", title="postman") Postman 
+		| es un cliente REST, que hace muy fácil probar API REST, ya que cuenta con una interfaz muy amigable, 
+		|pruebas, sincronización, colaboración y un sin fin de buenas características, usarlo es muy fácil, 
+		|tanto así que no lo explicaremos en este artículo, tan sólo con las pruebas que haremos
+		| podrán darse cuenta lo fácil que es usarlo. Postman tiene su plugin para Google Chrome 
+		|y sus Aplicaciones de escritorio también.
+	
+	p
+		img.aligncenter(src="http://frontendlabs.io/wp-content/uploads/2016/06/postman-api-rest-client.png", alt="postman api rest client")
+	
+	h3 Insertando datos en la tabla customers (POST)
+	
+	p.pre-irrelevant
+		|Usando postman vamos a insertar el siguiente objeto de datos hacia la tabla customers 
+		|mediante el método 
+		span.inline_code POST
+		| .
+	
+	p.pre-irrelevant
+		|- Abrimos postman y en el campo 
+		b url  
+		|insertamos lo siguiente: 
+		a(href="http://localhost:3004", target="_blank", title="json-server local") http://localhost:3004
+		|. 
+		br
+		|- En el combo de selección de métodos http seleccionamos 
+		span.inline_code POST
+		|.
+		br
+		|- En la pestaña 
+		b Body 
+		| seleccionamos la opción  
+		b raw
+		|.
+		br
+		|- Luego aparecerá un nuevo combo a la derecha de la opción 
+		b raw
+		|, del cual seleccionamos
+		|la opción: 
+		b  JSON(application/json)
+		|.
+		br
+		|- Por último escribimos lo siguiente en el contenido del cuerpo(body) de la solicitud(request). 
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "name": "Nombre Apellido",
+			  "gender": "male",
+			  "email": "juan.perez@gmail.com"
+			}
+
+	p.pre-irrelevant
+		|Entonces, nuestra ventana de postman debería verse algo así:
+	
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post.png", alt="customers post")
+	
+	p.pre-irrelevant
+		|Luego le damos click al botón enviar y si todo sale bien, entonces veremos la siguiente respuesta:
+	
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-post-response.png", alt="customers post response")
+	
+	p.pre-irrelevant
+		|Como podemos apreciar postman nos indica el 
+		b Status 
+		| de la respuesta (201 Created).
+		br
+		|Además nos muestra el 
+		b cuerpo de la respuesta
+		|, en el cual podemos ver el campo adicional 
+		b id
+		|, el mismo que es generado por json-server para llevar el control de los registros en nuestras tablas.
+		
+	p.pre-irrelevant
+		|Ahora agregaremos un registro más a nuestra tabla customers, así que realizamos los mismos pasos y al 
+		|final ingresamos la siguiente información para el nuevo registro:
+	
+	pre(class="prettyprint lang-json")
+		code.
+			{
+			  "name": "Nombre Apellido",
+			  "gender": "male",
+			  "email": "nombre.apellido@gmail.com"
+			}
+
+	p.pre-irrelevant
+		|Con esto ya hemos insertado 2 registros en nuestra tabla customers mediante nuestra API REST falsa.	
+
+	h3 Obteniendo datos de la tabla customers (GET)
+
+	p.pre-irrelevant
+		|Usando postman vamos a obtener todos los datos de la tabla customers, para llevar esto a cabo, simplemente abrimos una nueva ventana de postman e ingresamos la siguiente url: 
+		a(href="http://localhost:3004/customers", target="_blank", title="json-server local customers") http://localhost:3004/customers
+		| , luego elegimos el método 
+		span.inline_code GET
+		| y por último hacemos click sobre el 
+		b botón enviar 
+		| y así obtenemos la lista de los 2 registros que hemos agregado anteriormente, como podemos apreciar cada uno tiene su atributo 
+		b id
+		|.
+	
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-get-response.png", alt="customers get response")
+		
+	p.pre-irrelevant
+		|Ahora queremos obtener sólo los datos del registro con el 
+		b id  
+		|2.
+		br
+		|Para llevar esto a cabo, simplemente abrimos una nueva ventana de postman e ingresamos la siguiente url: 
+		a(href="http://localhost:3004/customers/2", target="_blank", title="json-server local customers") http://localhost:3004/customers/2
+		| , elegimos el método 
+		span.inline_code GET
+		| y luego hacemos click sobre el 
+		b botón enviar
+		|. Para de esta manera obtener sólo los datos del 2do registro.
+
+	p
+		img.aligncenter.bordered(src="http://frontendlabs.io/wp-content/uploads/2016/06/customers-get-response-id-2.png", alt="customers get response id 2")
+
+
+	h2 Fuentes
+	p
+		|NPM, Inc. 
+		i json-server.
+		|  [En línea] [Fecha de consulta: 29 de Junio del 2016]. 
+		br
+		|Disponible en: 
+		a(href="https://www.npmjs.com/package/json-server", target="_blank",
+		title="json server") https://www.npmjs.com/package/json-server
+		|.

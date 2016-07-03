@@ -15,4 +15,3 @@ vfs.src(['./jade/**/**/*.jade', '!./jade/**/**/_*.jade'])
         callback(null, data);
     }))
     .pipe(vfs.dest('./output/'));
-
