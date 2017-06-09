@@ -64,7 +64,7 @@ block post
 ```
 
 
-![it works](themes/general/img/post.png)
+![it works](source/themes/general/img/post.png)
 
 # Docker!
 
