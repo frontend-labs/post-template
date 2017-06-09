@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  app:
+    extends:
+      file: ./docker/compose/supply.yml
+      service: dependencies
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+    command: yarn run start

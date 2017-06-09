@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  dependencies:
+    image: fl/node
+    command: yarn install
+    volumes:
+      - ~/yarn_cache/:/tmp/cache/yarn/
+      - ../../source/:/home/jan/app/ # replace 'your_host_user' for the name of your host user
