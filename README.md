@@ -35,7 +35,7 @@ npm run browser
 
 ## Ready!
 
-Open *jade/_config.jade* and update it with your post data 
+Open *jade/_config.jade* and update it with your post data
 
 ```jade
 - var post = {}
@@ -52,11 +52,11 @@ block post
 	//- aquí empieza el contenido del post
 	h2 titulo de sección
 	p contenido de un parrafo
-	p texto y un enlace 
+	p texto y un enlace
 		a(href="http://frontendlabs.io/") Frontendlabs.io
-	p texto que contiene el nombre de una 
-		span(class="inline_folder") carpeta de un 
-		span(class="inline_file") archivo y de un 
+	p texto que contiene el nombre de una
+		span(class="inline_folder") carpeta de un
+		span(class="inline_file") archivo y de un
 		span(class="inline_code") codigo
 	pre(class="prettyprint lang-js")
 		code.
@@ -66,5 +66,21 @@ block post
 
 ![it works](themes/general/img/post.png)
 
+# Docker!
+
+## Setup
+```
+make setup
+```
+
+## Watch
+```
+make watch
+```
+
+## Browser
+```
+make browser
+```
 
 ## Enjoy it!

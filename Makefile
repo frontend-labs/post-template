@@ -9,6 +9,12 @@ build: ## Build images
 install: ## Install dependencies
 	sh ./docker/scripts/supply.sh
 
+watch: ## Watch
+	docker-compose run app yarn run watch
+
+browser: ## Load page in a Browser
+	docker-compose run app yarn run browser
+
 up: ## Up services
 	docker-compose up -d
 
