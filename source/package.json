@@ -4,8 +4,9 @@
   "description": "post-template",
   "main": "index.js",
   "scripts": {
+    "start": "yarn run watch",
     "html": "node index.js",
-    "watch": "watch 'npm run html'",
+    "watch": "watch 'yarn run html'",
     "browser": "browser-sync start --server --index 'output/index.html' --files 'output/*.html' --ghostMode 'false'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
