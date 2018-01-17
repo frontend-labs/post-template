@@ -41,6 +41,8 @@ npm-debug.log.*
 
 bower_components/
 
+# proyect
+source/output/
 
 .git/
 jquery-for-test/
