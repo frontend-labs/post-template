@@ -35,19 +35,19 @@ npm run browser
 
 ## Ready!
 
-Open *jade/_config.jade* and update it with your post data
+Open *pug/_config.pug* and update it with your post data
 
-```jade
+```pug
 - var post = {}
 - post.title           = 'titulo'
 - post.date            = '17 enero, 2016'
 - post.author          = 'Jan Sanchez'
 ```
 
-Then open *jade/index.jade* and start making your new post!
+Then open *pug/index.pug* and start making your new post!
 
-```jade
-extends ./jade/_layout.jade
+```pug
+extends ./pug/_layout.pug
 block post
 	//- aquí empieza el contenido del post
 	h2 titulo de sección
