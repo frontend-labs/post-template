@@ -68,6 +68,8 @@ block post
 
 # Docker!
 
+In this file: *docker/compose/supply.yml* change *jan* for your username (whoami)
+
 ## Setup
 ```
 make setup
@@ -77,6 +79,7 @@ make setup
 ```
 make watch
 ```
+And in another terminal:
 
 ## Browser
 ```
