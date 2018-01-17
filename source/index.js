@@ -1,14 +1,13 @@
 
-var jade = require('jade');
+var pug = require('pug');
 var vfs = require('vinyl-fs');
 var map = require('map-stream');
 var Buffer = require('buffer').Buffer;
 
-vfs.src(['./jade/**/**/*.jade', '!./jade/**/**/_*.jade'])
+vfs.src(['./pug/**/**/*.pug', '!./pug/**/**/_*.pug'])
     .pipe(map( (data, callback) => {
         pre_html = data.contents.toString('utf8');
-        html = jade.render(pre_html, {filename: './jade/', pretty: true});
-        // console.log(html);
+        html = pug.render(pre_html, {filename: './pug/', pretty: true});
         data.contents = new Buffer(html);
         data.extname = '.html';
         console.log(data.relative);
